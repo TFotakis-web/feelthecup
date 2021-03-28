@@ -1,0 +1,7 @@
+{
+  "name": "feelthecup",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

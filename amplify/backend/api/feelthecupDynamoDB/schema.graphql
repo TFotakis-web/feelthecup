@@ -1,0 +1,67 @@
+# type Task
+#   @model
+#   @auth(
+#     rules: [
+#       { allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete] }
+#       { allow: groups, groups: ["Employees"], queries: [get, list], mutations: null }
+#     ]
+#   ) {
+#   id: ID!
+#   title: String!
+#   description: String
+#   status: String
+# }
+# type PrivateNote @model @auth(rules: [{ allow: owner }]) {
+#   id: ID!
+#   content: String!
+# }
+
+type User @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	sub: String!
+	name: String!
+	surname: String!
+	email: String!
+	mobile_number: String!
+	birthdate: AWSDate!
+	cup_balance: Int!
+	credits: Float!
+	loyalty_balance: Int
+	no_of_cups_lost: Int
+	address: Address
+	stores: [Store]
+}
+
+type Transaction @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	udi: ID!
+	status: TransactionStatus!
+	points: Int!
+	#timestamp: AWSDateTime
+}
+
+enum TransactionStatus {
+	RECEIVED
+	RETURNED
+	LOST
+}
+
+type Store {
+	id: ID!
+	uid: ID!
+	phone: String!
+	municipality: String!
+	balance: Int!
+	latitude: Float!
+	longitude: Float!
+	cups_remaining: Int!
+	address: Address!
+}
+
+type Address {
+	country: String!
+	city: String!
+	street: String!
+	number: String!
+	postal_code: Int!
+}
