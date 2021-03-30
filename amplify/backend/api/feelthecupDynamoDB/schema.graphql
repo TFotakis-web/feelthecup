@@ -22,22 +22,80 @@ type User @model @auth(rules: [{ allow: owner }]) {
 	name: String!
 	surname: String!
 	email: String!
-	mobile_number: String!
+	mobileNumber: String!
 	birthdate: AWSDate!
 	cup_balance: Int!
 	credits: Float!
-	loyalty_balance: Int
-	no_of_cups_lost: Int
+	loyaltyBalance: Int
+	noOfCupsLost: Int
 	address: Address
-	stores: [Store]
+	stores: [ID]
+	deposits: [Deposit]
+	friends: [ID]
+}
+
+type Deposit {
+	amount: Float!
+	payedAt: AWSDateTime!
+	store: ID
+}
+
+type Store @model @auth(rules: [{ allow: owner }]) {
+	id: ID!
+	uid: ID!
+	phone: String!
+	email: String!
+	cupsDefault: Int!
+	cupsRemaining: Int!
+	address: Address!
+	tin: Int!
+	active: Boolean!
+	contracts: [Contract]
+}
+
+type Address {
+	country: String!
+	city: String!
+	municipality: String!
+	latitude: Float!
+	longitude: Float!
+	street: String!
+	number: String!
+	postalCode: Int!
+}
+
+type Contract {
+	id: ID!
+	store: ID!
+	plan: Plan!
+	invoice: Invoice!
+	signedAt: AWSDateTime!
+	startingAt: AWSDateTime!
+	expiringAt: AWSDateTime!
+}
+
+type Plan {
+	rewards: Boolean
+	noOfCups: Int!
+	charge: Float!
+}
+
+type Invoice {
+	amount: Float!
+	generatedAt: AWSDateTime!
+	payedAt: AWSDateTime!
+	cancelled: Boolean!
 }
 
 type Transaction @model @auth(rules: [{ allow: owner }]) {
 	id: ID!
-	udi: ID!
+	user: ID!
 	status: TransactionStatus!
-	points: Int!
-	#timestamp: AWSDateTime
+	rewards: [Reward]
+	receivedFrom: ID
+	receivedAt: AWSDateTime
+	returnedTo: ID
+	returnedAt: AWSDateTime
 }
 
 enum TransactionStatus {
@@ -46,22 +104,12 @@ enum TransactionStatus {
 	LOST
 }
 
-type Store {
-	id: ID!
-	uid: ID!
-	phone: String!
-	municipality: String!
-	balance: Int!
-	latitude: Float!
-	longitude: Float!
-	cups_remaining: Int!
-	address: Address!
+type Reward {
+	points: Int!
+	type: RewardType!
 }
 
-type Address {
-	country: String!
-	city: String!
-	street: String!
-	number: String!
-	postal_code: Int!
+enum RewardType {
+	ON_TIME_RETURN
+	SUGGESTED_LOCATION_RETURN
 }
