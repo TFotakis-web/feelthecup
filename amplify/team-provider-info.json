@@ -23,7 +23,8 @@
         "feelthecupProd": {
           "facebookAppId": "812445769354637",
           "googleClientId": "961056825030-hv0ilp0sf8bmftn0pb7o63ljcvm2j0oh"
-        }
+        },
+        "userPoolGroups": {}
       }
     }
   }

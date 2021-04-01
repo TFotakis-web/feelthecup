@@ -8,12 +8,23 @@ const TransactionStatus = {
   "LOST": "LOST"
 };
 
-const { User, Transaction, Address, Store } = initSchema(schema);
+const RewardType = {
+  "ON_TIME_RETURN": "ON_TIME_RETURN",
+  "SUGGESTED_LOCATION_RETURN": "SUGGESTED_LOCATION_RETURN"
+};
+
+const { User, Store, Transaction, Address, Deposit, Contract, Plan, Invoice, Reward } = initSchema(schema);
 
 export {
   User,
+  Store,
   Transaction,
   TransactionStatus,
+  RewardType,
   Address,
-  Store
+  Deposit,
+  Contract,
+  Plan,
+  Invoice,
+  Reward
 };
