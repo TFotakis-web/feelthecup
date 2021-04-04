@@ -1,7 +1,7 @@
 {
-  "name": "feelthecup",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "vue"
+	"name": "feelthecup",
+	"integrations": {
+		"capacitor": {}
+	},
+	"type": "vue"
 }
