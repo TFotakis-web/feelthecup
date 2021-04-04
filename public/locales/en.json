@@ -1,0 +1,153 @@
+{
+  "components": {
+    "navigation": {
+      "navbar-item": {}
+    },
+    "localeDropdown": {
+      "language": "Language"
+    }
+  },
+  "views": {
+    "error404": {
+      "header": "Error 404! Page not found.",
+      "message": "Oops! The page you requested was not found. Try going to the"
+    },
+    "auth": {
+      "dontHaveAnAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "backToSignIn": "Back to Sign In",
+      "signInToYourFeelTheCupAccount": "Sign in to your Feel The Cup account",
+      "createANewFeelTheCupAccount": "Create a new Feel The Cup account",
+      "haveAnAccount": "Have an account?",
+      "signIn": "Sign in",
+      "signingIn": "Signing in...",
+      "signUp": "Sign up",
+      "signingUp": "Signing up...",
+      "resetYourPassword": "Reset your password",
+      "forgotYourPassword": "Forgot your password?",
+      "changeYourPassword": "Please change your password.",
+      "confirmSignUp": "Confirmation"
+    },
+    "homePage": {
+      "pageTitle": "Home page"
+    }
+  },
+  "fields": {
+    "username": "Username",
+    "password": "Password",
+    "newPassword": "New password",
+    "email": "Email",
+    "countryCode": "Country Code",
+    "phoneNumber": "Phone Number",
+    "verificationCode": "Verification Code",
+    "tin": "TIN",
+    "name": "Name",
+    "address": "Address",
+    "city": "City",
+    "district": "District",
+    "doy": "DOY",
+    "postcode": "Postcode",
+    "phone": "Phone",
+    "mobile": "Mobile",
+    "type": "Type",
+    "color": "Color",
+    "owner": "Owner",
+    "duration": "Duration",
+    "discount": "Discount",
+    "iban": "IBAN",
+    "code": "Code",
+    "birthdate": "Birthdate",
+    "gender": "Gender",
+    "locale": "Locale",
+    "dragAndDropOrClick": "Drag and Drop files here or click",
+    "clickToUpload": "Click here to upload files",
+    "fathersName": "Father's name",
+    "chooseYourPostcode": "Choose your postcode",
+    "comments": "Comments",
+    "full_name": "Full Name",
+    "files": "Files",
+    "subscriptionExpirationDate": "Subscription exp. date",
+    "chooseFile": "Choose file"
+  },
+  "actions": {
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "sendCode": "Send code",
+    "sendingCode": "Sending code...",
+    "resendVerificationCode": "Resend verification code",
+    "add": "Add",
+    "adding": "Adding...",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "update": "Update",
+    "updating": "Updating...",
+    "edit": "Edit",
+    "save": "Save",
+    "saving": "Saving...",
+    "uploading": "Uploading...",
+    "accept": "Accept",
+    "accepting": "Accepting",
+    "reject": "Reject",
+    "rejecting": "Rejecting",
+    "ok": "OK",
+    "cancel": "Cancel"
+  },
+  "defaultNotification": {
+    "somethingWentWrong": "Something went wrong...",
+    "saveSuccess": "Saved successfully!",
+    "deleteSuccess": "Deleted successfully!"
+  },
+  "dates": {
+    "days": {
+      "Mo": "Mo",
+      "Tu": "Tu",
+      "We": "We",
+      "Th": "Th",
+      "Fr": "Fr",
+      "Sa": "Sa",
+      "Su": "Su",
+      "Sun": "Sun",
+      "Mon": "Mon",
+      "Tue": "Tue",
+      "Wed": "Wed",
+      "Thu": "Thu",
+      "Fri": "Fri",
+      "Sat": "Sat",
+      "Sunday": "Sunday",
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday"
+    },
+    "months": {
+      "Jan": "Jan",
+      "Feb": "Feb",
+      "Mar": "Mar",
+      "Apr": "Apr",
+      "Jun": "Jun",
+      "Jul": "Jul",
+      "Aug": "Aug",
+      "Sep": "Sep",
+      "Oct": "Oct",
+      "Nov": "Nov",
+      "Dec": "Dec",
+      "January": "January",
+      "February": "February",
+      "March": "March",
+      "April": "April",
+      "May": "May",
+      "June": "June",
+      "July": "July",
+      "August": "August",
+      "September": "September",
+      "October": "October",
+      "November": "November",
+      "December": "December"
+    }
+  },
+  "various": {
+    "underConstruction": "Under Construction"
+  }
+}

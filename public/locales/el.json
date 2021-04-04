@@ -1,0 +1,153 @@
+{
+  "components": {
+    "navigation": {
+      "navbar-item": {}
+    },
+    "localeDropdown": {
+      "language": "Γλώσσα"
+    }
+  },
+  "views": {
+    "error404": {
+      "header": "Σφάλμα 404! Η σελίδα δεν βρέθηκε.",
+      "message": "Ούπς! Η σελίδα που ζητήσατε δεν βρέθηκε. Δοκιμάστε να πάτε στην "
+    },
+    "auth": {
+      "dontHaveAnAccount": "Δεν έχετε λογαριασμό;",
+      "createAccount": "Δημιουργία λογαριασμού",
+      "backToSignIn": "Πίσω στην Σύνδεση",
+      "signInToYourFeelTheCupAccount": "Συνδεθείτε στον Feel The Cup λογαριασμό σας",
+      "createANewFeelTheCupAccount": "Δημιουργία νέου λογαριασμού Feel The Cup",
+      "haveAnAccount": "Έχετε λογαριασμό;",
+      "signIn": "Σύνδεση",
+      "signingIn": "Συνδέεται...",
+      "signUp": "Εγγραφή",
+      "signingUp": "Εγγραφή...",
+      "resetYourPassword": "Επαναφορά κωδικού",
+      "forgotYourPassword": "Ξεχάσατε τον κωδικό σας;",
+      "changeYourPassword": "Παρακαλούμε αλλάξτε τον κωδικό σας.",
+      "confirmSignUp": "Επιβεβαίωση"
+    },
+    "homePage": {
+      "pageTitle": "Αρχική σελίδα"
+    }
+  },
+  "fields": {
+    "username": "Όνομα χρήστη",
+    "password": "Κωδικός",
+    "newPassword": "Νέος κωδικός",
+    "email": "Email",
+    "countryCode": "Κωδικός Χώρας",
+    "phoneNumber": "Τηλέφωνο",
+    "verificationCode": "Κωδικός Επαλήθευσης",
+    "tin": "ΑΦΜ",
+    "name": "Όνομα",
+    "address": "Διεύθυνση",
+    "city": "Πόλη",
+    "district": "Νομός",
+    "doy": "ΔΟΥ",
+    "postcode": "Ταχ. Κώδικας",
+    "phone": "Τηλέφωνο",
+    "mobile": "Κινητό",
+    "type": "Τύπος",
+    "color": "Χρώμα",
+    "owner": "Κάτοχος",
+    "duration": "Διάρκεια",
+    "discount": "Έκπτωση",
+    "iban": "IBAN",
+    "code": "Κωδικός",
+    "birthdate": "Ημ. Γέννησης",
+    "gender": "Φύλο",
+    "locale": "Γλώσσα",
+    "dragAndDropOrClick": "Σύρετε ή κάντε click για επιλογή αρχείων",
+    "clickToUpload": "Κάντε click για να ανεβάσετε τα αρχεία σας",
+    "fathersName": "Πατρώνυμο",
+    "chooseYourPostcode": "Επιλέξτε ταχ. κώδικα",
+    "comments": "Σχόλια",
+    "full_name": "Ονοματεπώνυμο",
+    "files": "Αρχεία",
+    "subscriptionExpirationDate": "Ημ. λήξης συνδρομής",
+    "chooseFile": "Επιλέξτε αρχείο"
+  },
+  "actions": {
+    "submit": "Υποβολή",
+    "submitting": "Υποβάλλεται...",
+    "sendCode": "Αποστολή κωδικού",
+    "sendingCode": "Κωδικός αποστέλλεται...",
+    "resendVerificationCode": "Επανάληψη αποστολής κωδικού επαλήθευσης",
+    "add": "Προσθήκη",
+    "adding": "Προστίθεται...",
+    "delete": "Διαγραφή",
+    "deleting": "Διαγράφεται...",
+    "update": "Ενημέρωση",
+    "updating": "Ενημερώνεται...",
+    "edit": "Επεξεργασία",
+    "save": "Αποθήκευση",
+    "saving": "Αποθηκεύεται...",
+    "uploading": "Ανεβαίνει",
+    "accept": "Αποδοχή",
+    "accepting": "Αποδέχεται",
+    "reject": "Απόρριψη",
+    "rejecting": "Απορρίπτεται",
+    "ok": "OK",
+    "cancel": "Άκυρο"
+  },
+  "defaultNotification": {
+    "somethingWentWrong": "Κάτι πήγε στραβά...",
+    "saveSuccess": "Επιτυχής αποθήκευση!",
+    "deleteSuccess": "Επιτυχής διαγραφή!"
+  },
+  "dates": {
+    "days": {
+      "Mo": "Δε",
+      "Tu": "Τρ",
+      "We": "Τε",
+      "Th": "Πε",
+      "Fr": "Πα",
+      "Sa": "Σα",
+      "Su": "Κυ",
+      "Sun": "Κυρ",
+      "Mon": "Δευ",
+      "Tue": "Τρί",
+      "Wed": "Τετ",
+      "Thu": "Πέμ",
+      "Fri": "Παρ",
+      "Sat": "Σάβ",
+      "Sunday": "Κυριακή",
+      "Monday": "Δευτέρα",
+      "Tuesday": "Τρίτη",
+      "Wednesday": "Τετάρτη",
+      "Thursday": "Πέμπτη",
+      "Friday": "Παρασκευή",
+      "Saturday": "Σάββατο"
+    },
+    "months": {
+      "Jan": "Ιαν",
+      "Feb": "Φεβ",
+      "Mar": "Μαρ",
+      "Apr": "Απρ",
+      "Jun": "Ιούν",
+      "Jul": "Ιούλ",
+      "Aug": "Αύγ",
+      "Sep": "Σεπ",
+      "Oct": "Οκτ",
+      "Nov": "Νοέ",
+      "Dec": "Δεκ",
+      "January": "Ιανουάριος",
+      "February": "Φεβρουάριος",
+      "March": "Μάρτιος",
+      "April": "Απρίλιος",
+      "May": "Μάιος",
+      "June": "Ιούνιος",
+      "July": "Ιούλιος",
+      "August": "Αύγουστος",
+      "September": "Σεπτέμβριος",
+      "October": "Οκτώβριος",
+      "November": "Νοέμβριος",
+      "December": "Δεκέμβριος"
+    }
+  },
+  "various": {
+    "underConstruction": "Υπό κατασκευή"
+  }
+}
