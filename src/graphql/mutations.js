@@ -12,29 +12,29 @@ export const createUser = /* GraphQL */ `
       name
       surname
       email
-      mobile_number
+      mobileNumber
       birthdate
       cup_balance
       credits
-      loyalty_balance
-      no_of_cups_lost
+      loyaltyBalance
+      noOfCupsLost
       address {
         country
         city
-        street
-        number
-        postal_code
-      }
-      stores {
-        id
-        uid
-        phone
         municipality
-        balance
         latitude
         longitude
-        cups_remaining
+        street
+        number
+        postalCode
       }
+      stores
+      deposits {
+        amount
+        payedAt
+        store
+      }
+      friends
       _version
       _deleted
       _lastChangedAt
@@ -55,29 +55,29 @@ export const updateUser = /* GraphQL */ `
       name
       surname
       email
-      mobile_number
+      mobileNumber
       birthdate
       cup_balance
       credits
-      loyalty_balance
-      no_of_cups_lost
+      loyaltyBalance
+      noOfCupsLost
       address {
         country
         city
-        street
-        number
-        postal_code
-      }
-      stores {
-        id
-        uid
-        phone
         municipality
-        balance
         latitude
         longitude
-        cups_remaining
+        street
+        number
+        postalCode
       }
+      stores
+      deposits {
+        amount
+        payedAt
+        store
+      }
+      friends
       _version
       _deleted
       _lastChangedAt
@@ -98,28 +98,148 @@ export const deleteUser = /* GraphQL */ `
       name
       surname
       email
-      mobile_number
+      mobileNumber
       birthdate
       cup_balance
       credits
-      loyalty_balance
-      no_of_cups_lost
+      loyaltyBalance
+      noOfCupsLost
       address {
         country
         city
-        street
-        number
-        postal_code
-      }
-      stores {
-        id
-        uid
-        phone
         municipality
-        balance
         latitude
         longitude
-        cups_remaining
+        street
+        number
+        postalCode
+      }
+      stores
+      deposits {
+        amount
+        payedAt
+        store
+      }
+      friends
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createStore = /* GraphQL */ `
+  mutation CreateStore(
+    $input: CreateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    createStore(input: $input, condition: $condition) {
+      id
+      uid
+      phone
+      email
+      cupsDefault
+      cupsRemaining
+      address {
+        country
+        city
+        municipality
+        latitude
+        longitude
+        street
+        number
+        postalCode
+      }
+      tin
+      active
+      contracts {
+        id
+        store
+        signedAt
+        startingAt
+        expiringAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateStore = /* GraphQL */ `
+  mutation UpdateStore(
+    $input: UpdateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    updateStore(input: $input, condition: $condition) {
+      id
+      uid
+      phone
+      email
+      cupsDefault
+      cupsRemaining
+      address {
+        country
+        city
+        municipality
+        latitude
+        longitude
+        street
+        number
+        postalCode
+      }
+      tin
+      active
+      contracts {
+        id
+        store
+        signedAt
+        startingAt
+        expiringAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteStore = /* GraphQL */ `
+  mutation DeleteStore(
+    $input: DeleteStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    deleteStore(input: $input, condition: $condition) {
+      id
+      uid
+      phone
+      email
+      cupsDefault
+      cupsRemaining
+      address {
+        country
+        city
+        municipality
+        latitude
+        longitude
+        street
+        number
+        postalCode
+      }
+      tin
+      active
+      contracts {
+        id
+        store
+        signedAt
+        startingAt
+        expiringAt
       }
       _version
       _deleted
@@ -137,9 +257,16 @@ export const createTransaction = /* GraphQL */ `
   ) {
     createTransaction(input: $input, condition: $condition) {
       id
-      udi
+      user
       status
-      points
+      rewards {
+        points
+        type
+      }
+      receivedFrom
+      receivedAt
+      returnedTo
+      returnedAt
       _version
       _deleted
       _lastChangedAt
@@ -156,9 +283,16 @@ export const updateTransaction = /* GraphQL */ `
   ) {
     updateTransaction(input: $input, condition: $condition) {
       id
-      udi
+      user
       status
-      points
+      rewards {
+        points
+        type
+      }
+      receivedFrom
+      receivedAt
+      returnedTo
+      returnedAt
       _version
       _deleted
       _lastChangedAt
@@ -175,9 +309,16 @@ export const deleteTransaction = /* GraphQL */ `
   ) {
     deleteTransaction(input: $input, condition: $condition) {
       id
-      udi
+      user
       status
-      points
+      rewards {
+        points
+        type
+      }
+      receivedFrom
+      receivedAt
+      returnedTo
+      returnedAt
       _version
       _deleted
       _lastChangedAt

@@ -20,12 +20,14 @@ export const syncUsers = /* GraphQL */ `
         name
         surname
         email
-        mobile_number
+        mobileNumber
         birthdate
         cup_balance
         credits
-        loyalty_balance
-        no_of_cups_lost
+        loyaltyBalance
+        noOfCupsLost
+        stores
+        friends
         _version
         _deleted
         _lastChangedAt
@@ -46,29 +48,29 @@ export const getUser = /* GraphQL */ `
       name
       surname
       email
-      mobile_number
+      mobileNumber
       birthdate
       cup_balance
       credits
-      loyalty_balance
-      no_of_cups_lost
+      loyaltyBalance
+      noOfCupsLost
       address {
         country
         city
-        street
-        number
-        postal_code
-      }
-      stores {
-        id
-        uid
-        phone
         municipality
-        balance
         latitude
         longitude
-        cups_remaining
+        street
+        number
+        postalCode
       }
+      stores
+      deposits {
+        amount
+        payedAt
+        store
+      }
+      friends
       _version
       _deleted
       _lastChangedAt
@@ -91,12 +93,113 @@ export const listUsers = /* GraphQL */ `
         name
         surname
         email
-        mobile_number
+        mobileNumber
         birthdate
         cup_balance
         credits
-        loyalty_balance
-        no_of_cups_lost
+        loyaltyBalance
+        noOfCupsLost
+        stores
+        friends
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncStores = /* GraphQL */ `
+  query SyncStores(
+    $filter: ModelStoreFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStores(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        uid
+        phone
+        email
+        cupsDefault
+        cupsRemaining
+        tin
+        active
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getStore = /* GraphQL */ `
+  query GetStore($id: ID!) {
+    getStore(id: $id) {
+      id
+      uid
+      phone
+      email
+      cupsDefault
+      cupsRemaining
+      address {
+        country
+        city
+        municipality
+        latitude
+        longitude
+        street
+        number
+        postalCode
+      }
+      tin
+      active
+      contracts {
+        id
+        store
+        signedAt
+        startingAt
+        expiringAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listStores = /* GraphQL */ `
+  query ListStores(
+    $filter: ModelStoreFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStores(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        uid
+        phone
+        email
+        cupsDefault
+        cupsRemaining
+        tin
+        active
         _version
         _deleted
         _lastChangedAt
@@ -124,9 +227,12 @@ export const syncTransactions = /* GraphQL */ `
     ) {
       items {
         id
-        udi
+        user
         status
-        points
+        receivedFrom
+        receivedAt
+        returnedTo
+        returnedAt
         _version
         _deleted
         _lastChangedAt
@@ -143,9 +249,16 @@ export const getTransaction = /* GraphQL */ `
   query GetTransaction($id: ID!) {
     getTransaction(id: $id) {
       id
-      udi
+      user
       status
-      points
+      rewards {
+        points
+        type
+      }
+      receivedFrom
+      receivedAt
+      returnedTo
+      returnedAt
       _version
       _deleted
       _lastChangedAt
@@ -164,9 +277,12 @@ export const listTransactions = /* GraphQL */ `
     listTransactions(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        udi
+        user
         status
-        points
+        receivedFrom
+        receivedAt
+        returnedTo
+        returnedAt
         _version
         _deleted
         _lastChangedAt
