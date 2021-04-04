@@ -6,6 +6,8 @@
 <script>
 	export default {
 		name: 'Home',
+		components: {
+		},
 		mounted() {
 			this.$store.commit('pageStructure/setPageTitle', () => window.vm.$t('views.homePage.pageTitle'));
 			this.$store.commit('pageStructure/setPageBackButton', false);

@@ -30,17 +30,9 @@ export const auth = {
 		},
 	},
 	actions: {
-		async signUp(_, { username, password, email, phone_number }) {
+		async signUp(_, payload) {
 			try {
-				const params = {
-					username,
-					password,
-					attributes: {
-						email,
-						phone_number,
-					},
-				};
-				const response = await Auth.signUp(params);
+				const response = await Auth.signUp(payload);
 				return Promise.resolve(response);
 			} catch (error) {
 				console.error(error);
