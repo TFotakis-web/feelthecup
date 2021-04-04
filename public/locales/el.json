@@ -67,7 +67,13 @@
     "full_name": "Ονοματεπώνυμο",
     "files": "Αρχεία",
     "subscriptionExpirationDate": "Ημ. λήξης συνδρομής",
-    "chooseFile": "Επιλέξτε αρχείο"
+    "chooseFile": "Επιλέξτε αρχείο",
+    "family_name": "Επίθετο",
+    "genderOptions": {
+      "male": "Άνδρας",
+      "female": "Γυναίκα",
+      "other": "Άλλο"
+    }
   },
   "actions": {
     "submit": "Υποβολή",

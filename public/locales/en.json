@@ -67,7 +67,13 @@
     "full_name": "Full Name",
     "files": "Files",
     "subscriptionExpirationDate": "Subscription exp. date",
-    "chooseFile": "Choose file"
+    "chooseFile": "Choose file",
+    "family_name": "Surname",
+    "genderOptions": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    }
   },
   "actions": {
     "submit": "Submit",
