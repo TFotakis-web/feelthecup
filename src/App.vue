@@ -10,11 +10,15 @@
 		data() {
 			return {
 				loading: 0,
+				colorTheme: 'light',
 			};
 		},
 		created: async function () {
 			this.initLocale();
 			window.vm = this;
+		},
+		mounted() {
+			this.setColorTheme();
 		},
 		methods: {
 			initLocale: function () {
@@ -27,6 +31,14 @@
 					.then(() => {
 						this.loading--;
 					});
+			},
+			toggleTheme() {
+				this.colorTheme = this.colorTheme === 'light' ? 'dark' : 'light';
+				this.setColorTheme();
+			},
+			setColorTheme() {
+				document.body.setAttribute('color-theme', this.colorTheme);
+				this.$cookies.set('color-theme', this.colorTheme);
 			},
 		},
 	};
