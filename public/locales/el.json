@@ -29,7 +29,19 @@
       "confirmSignUp": "Επιβεβαίωση"
     },
     "homePage": {
-      "pageTitle": "Αρχική σελίδα"
+      "pageTitle": "Αρχική"
+    },
+    "map": {
+      "pageTitle": "Χάρτης"
+    },
+    "qrcode": {
+      "pageTitle": "QR"
+    },
+    "rewards": {
+      "pageTitle": "Κουπόνια"
+    },
+    "userProfile": {
+      "pageTitle": "Προφίλ"
     }
   },
   "fields": {

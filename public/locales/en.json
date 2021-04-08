@@ -29,7 +29,19 @@
       "confirmSignUp": "Confirmation"
     },
     "homePage": {
-      "pageTitle": "Home page"
+      "pageTitle": "Home"
+    },
+    "map": {
+      "pageTitle": "Map"
+    },
+    "qrcode": {
+      "pageTitle": "QR"
+    },
+    "rewards": {
+      "pageTitle": "Rewards"
+    },
+    "userProfile": {
+      "pageTitle": "Profile"
     }
   },
   "fields": {
