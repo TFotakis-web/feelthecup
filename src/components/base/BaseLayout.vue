@@ -1,39 +1,26 @@
 <template>
-	<router-view v-slot="{ Component }">
-		<transition name="route" mode="out-in">
-			<component :is="Component"/>
-		</transition>
-	</router-view>
+	<ion-page>
+		<ion-header>
+			<ion-toolbar>
+				<ion-title>{{ pageTitle }}</ion-title>
+			</ion-toolbar>
+		</ion-header>
+		<ion-content :fullscreen="true">
+			<ion-header collapse="condense">
+				<ion-toolbar>
+					<ion-title size="large">{{ pageTitle }}</ion-title>
+				</ion-toolbar>
+			</ion-header>
+
+			<ion-grid fixed>
+				<slot/>
+			</ion-grid>
+		</ion-content>
+	</ion-page>
 </template>
 <script>
 	export default {
 		name: 'BaseLayout',
-		components: {},
-		props: {
-			pageTitle: {
-				type: String,
-				default: '',
-			},
-		},
+		props: ['pageTitle'],
 	};
 </script>
-<style>
-	.route-enter-from {
-		opacity: 0;
-		transform: translateY(5px) scale(0.995);
-		zoom: 0.5;
-	}
-
-	.route-enter-active {
-		transition: all 200ms ease-out;
-	}
-
-	.route-leave-active {
-		transition: all 200ms ease-in;
-	}
-
-	.route-leave-to {
-		opacity: 0;
-		transform: translateY(5px) scale(0.995);
-	}
-</style>
