@@ -10,7 +10,7 @@ const routes = [
 	{
 		path: '',
 		name: 'BaseLayout',
-		component: () => import('@/components/base/BaseLayout'),
+		component: () => import('@/components/base/Tabs'),
 		children: [
 			...various,
 		],
