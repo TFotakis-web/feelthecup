@@ -8,6 +8,30 @@ export default [
 		},
 	},
 	{
+		path: '/map',
+		name: 'Map',
+		component: () => import('@/views/map/Map'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
+	{
+		path: '/qrCode',
+		name: 'QRCode',
+		component: () => import('@/views/qrCode/QRCode'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
+	{
+		path: '/rewards',
+		name: 'Rewards',
+		component: () => import('@/views/rewards/Rewards'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
+	{
 		path: '/profile',
 		name: 'UserProfile',
 		component: () => import('@/views/userProfile/UserProfile'),
