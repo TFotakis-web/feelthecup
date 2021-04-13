@@ -42,6 +42,26 @@
     },
     "userProfile": {
       "pageTitle": "Profile"
+    },
+    "home": {
+      "itsCoffeeTime": "Its coffee time!",
+      "FeelTheCupUses": "FeelTheCup uses",
+      "saved": "Saved...",
+      "plasticCups": "Plastic cups",
+      "kgSUP": "kg SUP",
+      "timeTillCupReturning": "Time till cup returning"
+    },
+    "actions": {
+      "remindMe": "Remind me!"
+    },
+    "notifications": {
+      "pageTitle": "Notifications"
+    },
+    "settings": {
+      "pageTitle": "Settings"
+    },
+    "setReminder": {
+      "pageTitle": "Set reminder"
     }
   },
   "fields": {
@@ -116,7 +136,19 @@
     "deleteSuccess": "Deleted successfully!"
   },
   "dates": {
-    "days": {
+    "second": "Second",
+    "seconds": "Seconds",
+    "minute": "Minute",
+    "minutes": "Minutes",
+    "hour": "Hour",
+    "hours": "Hours",
+    "day": "Day",
+    "days": "Days",
+    "month": "Month",
+    "months": "Months",
+    "year": "Year",
+    "years": "Years",
+    "dayNames": {
       "Mo": "Mo",
       "Tu": "Tu",
       "We": "We",
@@ -139,7 +171,7 @@
       "Friday": "Friday",
       "Saturday": "Saturday"
     },
-    "months": {
+    "monthNames": {
       "Jan": "Jan",
       "Feb": "Feb",
       "Mar": "Mar",
