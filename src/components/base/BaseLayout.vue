@@ -27,3 +27,9 @@
 		props: ['pageTitle'],
 	};
 </script>
+<style>
+	.ion-row-full-width {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+</style>
