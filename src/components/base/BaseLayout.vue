@@ -8,13 +8,12 @@
 				</ion-buttons>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content :fullscreen="true">
+		<ion-content :fullscreen="true" :color="contentColor">
 			<ion-header collapse="condense">
 				<ion-toolbar>
 					<ion-title size="large">{{ pageTitle }}</ion-title>
 				</ion-toolbar>
 			</ion-header>
-
 			<ion-grid fixed>
 				<slot/>
 			</ion-grid>
@@ -24,12 +23,24 @@
 <script>
 	export default {
 		name: 'BaseLayout',
-		props: ['pageTitle'],
+		props: ['pageTitle', 'contentColor'],
 	};
 </script>
 <style>
 	.ion-row-full-width {
 		margin-left: -5px;
 		margin-right: -5px;
+	}
+
+	.ion-row-full-height {
+		margin-top: -5px;
+		margin-bottom: -5px;
+	}
+
+	.ion-row-no-margin {
+		margin-left: -5px;
+		margin-right: -5px;
+		margin-top: -5px;
+		margin-bottom: -5px;
 	}
 </style>
