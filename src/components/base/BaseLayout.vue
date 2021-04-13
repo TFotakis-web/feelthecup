@@ -3,6 +3,9 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>{{ pageTitle }}</ion-title>
+				<ion-buttons slot="end">
+					<slot name="actions-end"/>
+				</ion-buttons>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content :fullscreen="true">
