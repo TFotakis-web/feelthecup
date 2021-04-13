@@ -32,6 +32,14 @@ export default [
 		},
 	},
 	{
+		path: '/setReminder',
+		name: 'SetReminder',
+		component: () => import('@/views/reminder/SetReminder'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
+	{
 		path: '/profile',
 		name: 'UserProfile',
 		component: () => import('@/views/userProfile/UserProfile'),
