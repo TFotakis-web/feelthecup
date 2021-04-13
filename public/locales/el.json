@@ -35,7 +35,8 @@
       "pageTitle": "Χάρτης"
     },
     "qrcode": {
-      "pageTitle": "QR"
+      "pageTitle": "QR",
+      "timeInUse": "Χρόνος χρήσης:"
     },
     "rewards": {
       "pageTitle": "Κουπόνια"
@@ -128,7 +129,8 @@
     "reject": "Απόρριψη",
     "rejecting": "Απορρίπτεται",
     "ok": "OK",
-    "cancel": "Άκυρο"
+    "cancel": "Άκυρο",
+    "return": "Επιστροφή"
   },
   "defaultNotification": {
     "somethingWentWrong": "Κάτι πήγε στραβά...",

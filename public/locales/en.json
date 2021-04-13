@@ -35,7 +35,8 @@
       "pageTitle": "Map"
     },
     "qrcode": {
-      "pageTitle": "QR"
+      "pageTitle": "QR",
+      "timeInUse": "Time in use:"
     },
     "rewards": {
       "pageTitle": "Rewards"
@@ -128,7 +129,8 @@
     "reject": "Reject",
     "rejecting": "Rejecting",
     "ok": "OK",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "return": "Return"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",
