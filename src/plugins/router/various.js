@@ -39,4 +39,20 @@ export default [
 			requiresAuth: true,
 		},
 	},
+	{
+		path: '/notifications',
+		name: 'Notifications',
+		component: () => import('@/views/notifications/Notifications'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
+	{
+		path: '/settings',
+		name: 'Settings',
+		component: () => import('@/views/settings/Settings'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
 ];
