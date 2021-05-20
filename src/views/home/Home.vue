@@ -45,16 +45,17 @@
 				<h1 class="ion-no-margin">{{ minutesRemaining }}</h1>
 			</ion-col>
 			<ion-col>
-			<ion-button :router-link="{name: 'SetReminder'}" shape="round" color="dark">
-				<ion-icon :icon="$ionicons.notificationsOutline" slot="start"/>
-				<ion-label>{{ $t('views.actions.remindMe') }}</ion-label>
-			</ion-button>
+				<ion-button :router-link="{name: 'SetReminder'}" shape="round" color="dark">
+					<ion-icon :icon="$ionicons.notificationsOutline" slot="start"/>
+					<ion-label>{{ $t('views.actions.remindMe') }}</ion-label>
+				</ion-button>
 			</ion-col>
 		</ion-row>
 	</base-layout>
 </template>
 <script>
 	import BaseLayout from '@/components/base/BaseLayout';
+
 
 	export default {
 		name: 'Home',
