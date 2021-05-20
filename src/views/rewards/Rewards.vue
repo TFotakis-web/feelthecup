@@ -12,12 +12,21 @@
 					</h1>
 				</div>
 			</ion-col>
-			<ion-col size="6"></ion-col>
+			<ion-col size="6" v-for="i in 6" :key="i">
+				<div class="ion-text-center" style="background-color: var(--ion-color-light-shade); border-radius: 20px; border: 1px solid black; padding-top: 30px; padding-bottom: 30px">
+					<h2 class="ion-no-margin">{{ $t('views.rewards.discount') }}</h2>
+					<ion-icon :icon="$ionicons.pintOutline" class="ion-align-self-center" style="font-size: xxx-large; margin-left: auto"/>
+					<h3 class="ion-no-margin">
+						<strong>-0.3€</strong>
+					</h3>
+				</div>
+			</ion-col>
 		</ion-row>
 	</base-layout>
 </template>
 <script>
 	import BaseLayout from '@/components/base/BaseLayout';
+
 
 	export default {
 		name: 'Rewards',
