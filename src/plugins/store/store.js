@@ -2,8 +2,6 @@ import { createStore } from 'vuex';
 import { pageStructure } from '@/plugins/store/pageStructure';
 import { auth } from '@/plugins/store/auth';
 
-// import { API, graphqlOperation } from 'aws-amplify';
-
 const initState = () => ({});
 
 export const store = createStore({
@@ -22,7 +20,6 @@ export const store = createStore({
 			commit('init');
 			commit('auth/init');
 			commit('pageStructure/init');
-			commit('request/init');
 		},
 	},
 	getters: {},
