@@ -12,19 +12,15 @@
       "AmplifyAppId": "d2g1ean20i5jzt"
     },
     "categories": {
+      "auth": {
+        "userPoolGroups": {},
+        "feelthecupProd": {}
+      },
       "function": {
         "feelthecupProdPostConfirmation": {
-          "GROUP": "client",
           "deploymentBucketName": "amplify-feelthecup-prod-225347-deployment",
-          "s3Key": "amplify-builds/feelthecupProdPostConfirmation-6b6c4c30496552456453-build.zip"
+          "s3Key": "amplify-builds/feelthecupProdPostConfirmation-4f3150396161524d2b55-build.zip"
         }
-      },
-      "auth": {
-        "feelthecupProd": {
-          "facebookAppId": "812445769354637",
-          "googleClientId": "961056825030-hv0ilp0sf8bmftn0pb7o63ljcvm2j0oh"
-        },
-        "userPoolGroups": {}
       }
     }
   }
