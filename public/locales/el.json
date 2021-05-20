@@ -44,7 +44,16 @@
       "discount": "Έκπτωση"
     },
     "userProfile": {
-      "pageTitle": "Προφίλ"
+      "pageTitle": "Προφίλ",
+      "hi": "Γειά σου",
+      "pointUsed": "Ξοδευμένοι πόντοι",
+      "rewards": "Επιβραβεύσεις",
+      "Recent": "Πρόσφατα",
+      "week": "Εβδομάδα",
+      "hoursPerCup": "ώ",
+      "cup": "cup",
+      "lost": "χαμένα",
+      "feelTheCupForFriends": "FeelTheCup με την παρέα"
     },
     "home": {
       "itsCoffeeTime": "Ώρα για καφέ!",
@@ -65,6 +74,9 @@
     },
     "setReminder": {
       "pageTitle": "Ορισμός υπενθύμησης"
+    },
+    "about": {
+      "pageTitle": "Σχετικά"
     }
   },
   "fields": {
@@ -132,7 +144,8 @@
     "rejecting": "Απορρίπτεται",
     "ok": "OK",
     "cancel": "Άκυρο",
-    "return": "Επιστροφή"
+    "return": "Επιστροφή",
+    "useCup": "Χρήση Cup!"
   },
   "defaultNotification": {
     "somethingWentWrong": "Κάτι πήγε στραβά...",

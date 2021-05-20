@@ -44,7 +44,16 @@
       "discount": "Discount"
     },
     "userProfile": {
-      "pageTitle": "Profile"
+      "pageTitle": "Profile",
+      "hi": "Hi",
+      "pointUsed": "Points used",
+      "rewards": "Rewards",
+      "Recent": "Recent",
+      "week": "Week",
+      "hoursPerCup": "h",
+      "cup": "cup",
+      "lost": "lost",
+      "feelTheCupForFriends": "FeelTheCup for friends"
     },
     "home": {
       "itsCoffeeTime": "Its coffee time!",
@@ -65,6 +74,9 @@
     },
     "setReminder": {
       "pageTitle": "Set reminder"
+    },
+    "about": {
+      "pageTitle": "About"
     }
   },
   "fields": {
@@ -132,7 +144,8 @@
     "rejecting": "Rejecting",
     "ok": "OK",
     "cancel": "Cancel",
-    "return": "Return"
+    "return": "Return",
+    "useCup": "Use Cup!"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",
