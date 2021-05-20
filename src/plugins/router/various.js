@@ -63,4 +63,12 @@ export default [
 			requiresAuth: true,
 		},
 	},
+	{
+		path: '/about',
+		name: 'About',
+		component: () => import('@/views/about/About'),
+		meta: {
+			requiresAuth: true,
+		},
+	},
 ];
