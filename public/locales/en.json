@@ -40,7 +40,8 @@
     },
     "rewards": {
       "pageTitle": "Rewards",
-      "pointsAvailable": "Points Available"
+      "pointsAvailable": "Points Available",
+      "discount": "Discount"
     },
     "userProfile": {
       "pageTitle": "Profile"

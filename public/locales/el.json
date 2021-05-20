@@ -40,7 +40,8 @@
     },
     "rewards": {
       "pageTitle": "Κουπόνια",
-      "pointsAvailable": "Διαθέσιμοι Πόντοι"
+      "pointsAvailable": "Διαθέσιμοι Πόντοι",
+      "discount": "Έκπτωση"
     },
     "userProfile": {
       "pageTitle": "Προφίλ"
