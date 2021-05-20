@@ -57,5 +57,6 @@ export const pageStructure = {
 		globalPendingPromises: (state) => state.globalPendingPromises,
 		routerViewPendingPromises: (state) => state.routerViewPendingPromises,
 		localesLoaded: (state) => state.localesLoaded,
+		defaultProfilePicture: () => 'https://www.w3schools.com/howto/img_avatar.png',
 	},
 };
