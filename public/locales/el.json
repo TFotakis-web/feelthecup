@@ -39,7 +39,8 @@
       "timeInUse": "Χρόνος χρήσης:"
     },
     "rewards": {
-      "pageTitle": "Κουπόνια"
+      "pageTitle": "Κουπόνια",
+      "pointsAvailable": "Διαθέσιμοι Πόντοι"
     },
     "userProfile": {
       "pageTitle": "Προφίλ"

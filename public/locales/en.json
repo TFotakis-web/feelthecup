@@ -39,7 +39,8 @@
       "timeInUse": "Time in use:"
     },
     "rewards": {
-      "pageTitle": "Rewards"
+      "pageTitle": "Rewards",
+      "pointsAvailable": "Points Available"
     },
     "userProfile": {
       "pageTitle": "Profile"
