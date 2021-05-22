@@ -35,9 +35,6 @@ export const createUser = /* GraphQL */ `
         store
       }
       friends
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -78,9 +75,6 @@ export const updateUser = /* GraphQL */ `
         store
       }
       friends
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -121,9 +115,6 @@ export const deleteUser = /* GraphQL */ `
         store
       }
       friends
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -161,9 +152,6 @@ export const createStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -201,9 +189,6 @@ export const updateStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -241,9 +226,6 @@ export const deleteStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -267,9 +249,6 @@ export const createTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -293,9 +272,6 @@ export const updateTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner
@@ -319,9 +295,6 @@ export const deleteTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
       owner

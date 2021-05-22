@@ -1,8 +1,6 @@
 {
-    "identityPoolName": "feelthecup_prod_identity_pool",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "feelthcd1c4914",
-    "userPoolName": "feelthecup_prod_userpool",
+    "resourceNameTruncated": "feelth7f73b295",
+    "userPoolName": "feelthecupProd_user_pool",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -43,17 +41,17 @@
     "userpoolClientReadAttributes": [
         "birthdate",
         "email",
+        "family_name",
         "gender",
-        "name",
         "phone_number",
         "email_verified",
         "phone_number_verified"
     ],
-    "userpoolClientLambdaRole": "feelthcd1c4914_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "feelth7f73b295_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "sharedId": "cd1c4914",
+    "sharedId": "7f73b295",
     "resourceName": "feelthecupProd",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -67,31 +65,22 @@
         ]
     },
     "useDefault": "manual",
-    "thirdPartyAuth": true,
-    "authProviders": [
-        "graph.facebook.com",
-        "accounts.google.com"
-    ],
     "usernameAttributes": [
         "email, phone_number"
     ],
-    "userPoolGroups": true,
+    "userPoolGroups": false,
     "adminQueries": false,
-    "triggers": "{\n  \"PostConfirmation\": [\n    \"add-to-group\",\n    \"custom\"\n  ]\n}",
+    "triggers": "{\n  \"PostConfirmation\": [\n    \"custom\"\n  ]\n}",
     "hostedUI": false,
-    "userPoolGroupList": [
-        "admin",
-        "client",
-        "store"
-    ],
+    "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "permissions": [
-        "{\n  \"policyName\": \"AddToGroupCognito\",\n  \"trigger\": \"PostConfirmation\",\n  \"effect\": \"Allow\",\n  \"actions\": [\n    \"cognito-idp:AdminAddUserToGroup\",\n    \"cognito-idp:GetGroup\",\n    \"cognito-idp:CreateGroup\"\n  ],\n  \"resource\": {\n    \"paramType\": \"!GetAtt\",\n    \"keys\": [\n      \"UserPool\",\n      \"Arn\"\n    ]\n  }\n}"
-    ],
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"feelthecupProdPostConfirmation\"\n  }\n]",
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": [
         {
             "category": "function",
