@@ -7,7 +7,7 @@ var ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
 
 exports.handler = (event, context, callback) => {
 	var params = {
-		TableName: 'User-eyu4z27svvgz5gygj4jebjutl4-dev', //TODO to be changed to process.env...
+		TableName: 'User-kly5uips7ra6tftnwehfvz4ibi-prod', //TODO to be changed to process.env...
 		Item: {
 			'id': {
 				S: event.request.userAttributes.sub

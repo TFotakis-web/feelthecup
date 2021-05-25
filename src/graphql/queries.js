@@ -57,7 +57,22 @@ export const listUsers = /* GraphQL */ `
         credits
         loyaltyBalance
         noOfCupsLost
+        address {
+          country
+          city
+          municipality
+          latitude
+          longitude
+          street
+          number
+          postalCode
+        }
         stores
+        deposits {
+          amount
+          payedAt
+          store
+        }
         friends
         createdAt
         updatedAt
@@ -91,6 +106,17 @@ export const getStore = /* GraphQL */ `
       contracts {
         id
         store
+        plan {
+          rewards
+          noOfCups
+          charge
+        }
+        invoice {
+          amount
+          generatedAt
+          payedAt
+          cancelled
+        }
         signedAt
         startingAt
         expiringAt
@@ -115,8 +141,25 @@ export const listStores = /* GraphQL */ `
         email
         cupsDefault
         cupsRemaining
+        address {
+          country
+          city
+          municipality
+          latitude
+          longitude
+          street
+          number
+          postalCode
+        }
         tin
         active
+        contracts {
+          id
+          store
+          signedAt
+          startingAt
+          expiringAt
+        }
         createdAt
         updatedAt
         owner
@@ -156,6 +199,10 @@ export const listTransactions = /* GraphQL */ `
         id
         user
         status
+        rewards {
+          points
+          type
+        }
         receivedFrom
         receivedAt
         returnedTo

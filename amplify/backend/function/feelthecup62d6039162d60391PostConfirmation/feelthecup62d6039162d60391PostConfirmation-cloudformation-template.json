@@ -67,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "feelthecupProdPostConfirmation",
+            "feelthecup62d6039162d60391PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "feelthecupProdPostConfirmation",
+                  "feelthecup62d6039162d60391PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -122,12 +122,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "feelthecupProdPostConfirmation",
+            "feelthecup62d6039162d60391PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "feelthecupProdPostConfirmation",
+                  "feelthecup62d6039162d60391PostConfirmation",
                   "-",
                   {
                     "Ref": "env"

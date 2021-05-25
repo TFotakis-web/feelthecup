@@ -1,19 +1,19 @@
 {
   "function": {
-    "feelthecupProdPostConfirmation": {
+    "feelthecup62d6039162d60391PostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "auth": {
-    "feelthecupProd": {
+    "feelthecup62d6039162d60391": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "feelthecupProdPostConfirmation",
+          "resourceName": "feelthecup62d6039162d60391PostConfirmation",
           "triggerProvider": "Cognito",
           "attributes": [
             "Arn",
@@ -25,7 +25,7 @@
     }
   },
   "api": {
-    "feelthecupDynamoDB": {
+    "feelthecup": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -33,12 +33,29 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authfeelthecupProd"
+              "userPoolId": "authfeelthecup62d6039162d60391"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
+    }
+  },
+  "storage": {
+    "s3e5b58469": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
     }
   }
 }

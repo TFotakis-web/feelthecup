@@ -148,6 +148,17 @@ export const createStore = /* GraphQL */ `
       contracts {
         id
         store
+        plan {
+          rewards
+          noOfCups
+          charge
+        }
+        invoice {
+          amount
+          generatedAt
+          payedAt
+          cancelled
+        }
         signedAt
         startingAt
         expiringAt
@@ -185,6 +196,17 @@ export const updateStore = /* GraphQL */ `
       contracts {
         id
         store
+        plan {
+          rewards
+          noOfCups
+          charge
+        }
+        invoice {
+          amount
+          generatedAt
+          payedAt
+          cancelled
+        }
         signedAt
         startingAt
         expiringAt
@@ -222,6 +244,17 @@ export const deleteStore = /* GraphQL */ `
       contracts {
         id
         store
+        plan {
+          rewards
+          noOfCups
+          charge
+        }
+        invoice {
+          amount
+          generatedAt
+          payedAt
+          cancelled
+        }
         signedAt
         startingAt
         expiringAt

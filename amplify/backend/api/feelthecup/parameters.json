@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "feelthecupDynamoDB",
+  "AppSyncApiName": "feelthecup",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authfeelthecupProd",
+      "authfeelthecup62d6039162d60391",
       "Outputs.UserPoolId"
     ]
   }

@@ -11,10 +11,10 @@
     "userpoolArn": {
       "Type": "String"
     },
-    "functionfeelthecupProdPostConfirmationName": {
+    "functionfeelthecup62d6039162d60391PostConfirmationName": {
       "Type": "String"
     },
-    "functionfeelthecupProdPostConfirmationArn": {
+    "functionfeelthecup62d6039162d60391PostConfirmationArn": {
       "Type": "String"
     }
   },
@@ -34,7 +34,7 @@
       "Properties": {
         "Action": "lambda:InvokeFunction",
         "FunctionName": {
-          "Ref": "functionfeelthecupProdPostConfirmationName"
+          "Ref": "functionfeelthecup62d6039162d60391PostConfirmationName"
         },
         "Principal": "cognito-idp.amazonaws.com",
         "SourceArn": {
@@ -132,9 +132,9 @@
         "lambdaConfig": [
           {
             "triggerType": "PostConfirmation",
-            "lambdaFunctionName": "feelthecupProdPostConfirmation",
+            "lambdaFunctionName": "feelthecup62d6039162d60391PostConfirmation",
             "lambdaFunctionArn": {
-              "Ref": "functionfeelthecupProdPostConfirmationArn"
+              "Ref": "functionfeelthecup62d6039162d60391PostConfirmationArn"
             }
           }
         ]

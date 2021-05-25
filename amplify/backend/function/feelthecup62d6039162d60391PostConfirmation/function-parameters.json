@@ -3,15 +3,15 @@
   "modules": [
     "custom"
   ],
-  "parentResource": "feelthecupProd",
-  "functionName": "feelthecupProdPostConfirmation",
-  "resourceName": "feelthecupProdPostConfirmation",
+  "parentResource": "feelthecup62d6039162d60391",
+  "functionName": "feelthecup62d6039162d60391PostConfirmation",
+  "resourceName": "feelthecup62d6039162d60391PostConfirmation",
   "parentStack": "auth",
   "triggerEnvs": [],
   "triggerDir": "C:\\Users\\TFotakis\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
   "triggerTemplate": "PostConfirmation.json.ejs",
   "triggerEventPath": "PostConfirmation.event.json",
-  "roleName": "feelthecupProdPostConfirmation",
+  "roleName": "feelthecup62d6039162d60391PostConfirmation",
   "skipEdit": true,
   "enableCors": false
 }
