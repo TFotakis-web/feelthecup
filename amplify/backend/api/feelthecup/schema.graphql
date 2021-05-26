@@ -27,6 +27,7 @@ type User @model @auth(rules: [{ allow: owner }]) {
 	cup_balance: Int!
 	credits: Float!
 	loyaltyBalance: Int
+	noOfCupsUsed: Int
 	noOfCupsLost: Int
 	address: Address
 	stores: [ID]
@@ -54,14 +55,14 @@ type Store @model @auth(rules: [{ allow: owner }]) {
 }
 
 type Address {
-	country: String!
-	city: String!
-	municipality: String!
-	latitude: Float!
-	longitude: Float!
-	street: String!
-	number: String!
-	postalCode: Int!
+	country: String
+	city: String
+	municipality: String
+	latitude: Float
+	longitude: Float
+	street: String
+	number: String
+	postalCode: Int
 }
 
 type Contract {
