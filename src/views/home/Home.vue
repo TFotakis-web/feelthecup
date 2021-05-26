@@ -11,7 +11,7 @@
 		<h1><strong>{{ $t('views.home.itsCoffeeTime') }}</strong></h1>
 		<ion-row class="ion-row-full-width" style="background-color: var(--ion-color-accent)">
 			<ion-col class="ion-text-center ion-align-self-center">
-				<h5>{{ uses }}</h5>
+				<h5>{{ $store.getters['auth/userProfile'].noOfCupsUsed }}</h5>
 			</ion-col>
 			<ion-col>
 				<h5>{{ $t('views.home.FeelTheCupUses') }}</h5>
@@ -64,7 +64,6 @@
 		},
 		data() {
 			return {
-				uses: 25,
 				plasticCups: 1252,
 				kgSUP: 5.21,
 				hoursRemaining: '14',
