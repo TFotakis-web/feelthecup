@@ -1,8 +1,8 @@
 import router from '@/plugins/router/router';
 import { Auth } from 'aws-amplify';
-// import { API, Auth, graphqlOperation } from 'aws-amplify';
-// import { me } from '@/graphql/queries';
-// import { updateUserProfileDetails } from '@/graphql/mutations';
+import { API, graphqlOperation } from 'aws-amplify';
+import { getUser } from '@/graphql/queries';
+import { createUser, updateUser } from '@/graphql/mutations';
 
 const initState = () => ({
 	cognitoUser: null,
@@ -11,6 +11,56 @@ const initState = () => ({
 	userModelPermissions: [],
 	userPagePermissions: {},
 });
+
+const initUserProfile = (user) => ({
+	id: user.attributes.sub,
+	sub: user.attributes.sub,
+	name: user.attributes.name,
+	surname: user.attributes.family_name,
+	email: user.attributes.email,
+	mobileNumber: user.attributes.phone_number,
+	birthdate: user.attributes.birthdate,
+	cup_balance: 0,
+	credits: 0,
+	loyaltyBalance: 0,
+	noOfCupsUsed: 0,
+	noOfCupsLost: 0,
+	address: {
+		country: null,
+		city: null,
+		municipality: null,
+		latitude: null,
+		longitude: null,
+		street: null,
+		number: null,
+		postalCode: null,
+	},
+	stores: [],
+	deposits: [],
+	friends: [],
+});
+
+function compareKeys(a, b) {
+	var aKeys = Object.keys(a).sort();
+	var bKeys = Object.keys(b).sort();
+	// return JSON.stringify(aKeys) === JSON.stringify(bKeys);
+
+	for (const key of bKeys) {
+		if (!aKeys.includes(key)) {
+			return false;
+		}
+		if ((a[key] === null || a[key] === undefined) && a[key] !== b[key]) {
+			return false;
+		}
+		if (typeof a[key] === 'object' && a[key] !== null && !Array.isArray(a[key])) {
+			const flag = compareKeys(a[key], b[key]);
+			if (!flag) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
 
 export const auth = {
 	namespaced: true,
@@ -118,28 +168,32 @@ export const auth = {
 			}
 		},
 		async currentAuthenticatedUser({ commit }) {
-		// async currentAuthenticatedUser({ commit, dispatch }) {
 			try {
 				commit('pageStructure/increaseGlobalPendingPromises', null, { root: true });
 
 				// bypassCache: Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-				let response = await Auth.currentAuthenticatedUser({ bypassCache: true });
-				commit('setCognitoUser', response);
+				const cognitoUser = await Auth.currentAuthenticatedUser({ bypassCache: true });
+				commit('setCognitoUser', cognitoUser);
 
-				response = await Auth.currentUserInfo();
-				commit('setUser', response);
+				const user = await Auth.currentUserInfo();
+				commit('setUser', user);
 
-				// User is now authenticated
-				// Dispatch all async-able actions
-				// dispatch('request/listRequests', null, { root: true });
-
-				// Todo: Fetch user
 				// This has to be synchronous for routing permissions
-				// response = await API.graphql(graphqlOperation(me));
-				// const userProfile = response.data.me;
-				// commit('setUserProfile', userProfile);
-
-				return Promise.resolve(response);
+				let userProfile = await API.graphql(graphqlOperation(getUser, { id: user.attributes.sub }));
+				userProfile = userProfile.data.getUser;
+				if (!userProfile) {
+					userProfile = await API.graphql(graphqlOperation(createUser, { input: initUserProfile(user)}));
+					userProfile = userProfile.data.createUser;
+				} else if (!compareKeys(userProfile, initUserProfile(user))) {
+					userProfile = Object.assign(userProfile, initUserProfile(user));
+					delete userProfile.createdAt;
+					delete userProfile.updatedAt;
+					delete userProfile.owner;
+					userProfile = await API.graphql(graphqlOperation(updateUser, { input: userProfile }));
+					userProfile = userProfile.data.updateUser;
+				}
+				commit('setUserProfile', userProfile);
+				return Promise.resolve(userProfile);
 			} catch (error) {
 				console.error(error);
 				await Auth.signOut();
