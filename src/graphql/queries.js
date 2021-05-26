@@ -14,6 +14,7 @@ export const getUser = /* GraphQL */ `
       cup_balance
       credits
       loyaltyBalance
+      noOfCupsUsed
       noOfCupsLost
       address {
         country
@@ -56,6 +57,7 @@ export const listUsers = /* GraphQL */ `
         cup_balance
         credits
         loyaltyBalance
+        noOfCupsUsed
         noOfCupsLost
         address {
           country

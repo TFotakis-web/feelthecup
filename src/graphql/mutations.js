@@ -17,6 +17,7 @@ export const createUser = /* GraphQL */ `
       cup_balance
       credits
       loyaltyBalance
+      noOfCupsUsed
       noOfCupsLost
       address {
         country
@@ -57,6 +58,7 @@ export const updateUser = /* GraphQL */ `
       cup_balance
       credits
       loyaltyBalance
+      noOfCupsUsed
       noOfCupsLost
       address {
         country
@@ -97,6 +99,7 @@ export const deleteUser = /* GraphQL */ `
       cup_balance
       credits
       loyaltyBalance
+      noOfCupsUsed
       noOfCupsLost
       address {
         country
