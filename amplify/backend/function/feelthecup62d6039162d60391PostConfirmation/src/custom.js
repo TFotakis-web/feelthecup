@@ -1,17 +1,24 @@
-var AWS = require('aws-sdk')
-
-AWS.config.update({ region: process.env.REGION })
-
-var ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
+var aws = require('aws-sdk');
+aws.config.update({ region: process.env.REGION });
+var ddb = new aws.DynamoDB();
 
 
-exports.handler = (event, context, callback) => {
-	var params = {
-		TableName: 'User-kly5uips7ra6tftnwehfvz4ibi-prod', //TODO to be changed to process.env...
+exports.handler = async (event, context, callback) => {
+	if (!event.request.userAttributes.sub) {
+		console.log("Error: Nothing was written to DynamoDB");
+		context.done(null, event);
+		return;
+	}
+
+	let date = new Date();
+	date = date.toISOString();
+	let params = {
+		TableName: `User-${process.env.DYNAMODB_TABLE_HASH}-${process.env.ENV}`,
 		Item: {
-			'id': {
-				S: event.request.userAttributes.sub
-			},
+			'id': { S: event.request.userAttributes.sub },
+			'__typename': { S: 'User' },
+			'username': { S: event.userName },
+			'email': { S: event.request.userAttributes.email },
 			'name': { S: event.request.userAttributes.name },
 			'surname': { S: event.request.userAttributes.family_name },
 			'email': { S: event.request.userAttributes.email },
@@ -21,16 +28,19 @@ exports.handler = (event, context, callback) => {
 			'credits': { S: '0' },
 			'loyaltyBalance': { S: '0' },
 			'noOfCupsLost': { S: '0' },
-			'address': { S: 'Null' }
-		}
+			'address': { S: 'Null' },
+			'createdAt': { S: date },
+			'updatedAt': { S: date },
+		},
 	};
 
-	ddb.putItem(params, function (err, data) {
-		if (err) {
-			console.log("Error", err);
-		} else {
-			console.log("Success", data);
-		}
-	});
+	try {
+		await ddb.putItem(params).promise();
+		console.log("- Success");
+	}
+	catch (err) {
+		console.error("- Error: ", err);
+	}
+	context.done(null, event);
 	callback(null, event);
 };
