@@ -48,21 +48,21 @@
 		<ion-row class="ion-padding-top">
 			<ion-col>
 				<div class="ion-text-center" style="border-radius: 20px; border: 1px solid black;">
-					<h3 class="ion-no-margin">{{ cupsPerWeek }}</h3>
+					<h3 class="ion-no-margin">{{ userProfile.cupsPerWeek }}</h3>
 					<ion-icon :icon="$ionicons.pintOutline" class="ion-align-self-center" style="font-size: x-large; margin-left: auto"/>
 					<h6 class="ion-no-margin">/{{ $t('views.userProfile.week') }}</h6>
 				</div>
 			</ion-col>
 			<ion-col>
 				<div class="ion-text-center" style="border-radius: 20px; border: 1px solid black;">
-					<h3 class="ion-no-margin">{{ hoursPerCup }}{{ $t('views.userProfile.hoursPerCup') }}</h3>
+					<h3 class="ion-no-margin">{{ userProfile.hoursPerCup }}{{ $t('views.userProfile.hoursPerCup') }}</h3>
 					<ion-icon :icon="$ionicons.timeOutline" class="ion-align-self-center" style="font-size: x-large; margin-left: auto"/>
 					<h6 class="ion-no-margin">/{{ $t('views.userProfile.cup') }}</h6>
 				</div>
 			</ion-col>
 			<ion-col>
 				<div class="ion-text-center" style="border-radius: 20px; border: 1px solid black;">
-					<h3 class="ion-no-margin">{{ cupsLost }} {{ $t('views.userProfile.cup') }}</h3>
+					<h3 class="ion-no-margin">{{ userProfile.noOfCupsLost }} {{ $t('views.userProfile.cup') }}</h3>
 					<ion-icon :icon="$ionicons.alertCircleOutline" class="ion-align-self-center" style="font-size: x-large; margin-left: auto"/>
 					<h6 class="ion-no-margin">/{{ $t('views.userProfile.lost') }}</h6>
 				</div>
@@ -77,7 +77,10 @@
 			</ion-col>
 		</ion-row>
 		<ion-list>
-			<ion-item v-for="(friend, i) in friends" :key="`friend:${i}`">
+			<ion-item v-if="userProfile.friends.length === 0">
+				<span>{{ $t('views.userProfile.noFriends') }}</span>
+			</ion-item>
+			<ion-item v-else v-for="(friend, i) in userProfile.friends" :key="`friend:${i}`">
 				<ion-avatar slot="start">
 					<s3-ion-img :s3-object="friend.profilePicture" :default-url="$store.getters['pageStructure/defaultProfilePicture']"/>
 				</ion-avatar>
@@ -101,8 +104,6 @@
 		},
 		data() {
 			return {
-				pointsUsed: 300,
-				rewards: 2,
 				recents: [
 					// {
 					// 	shop: 'Coffee Jerry',
@@ -117,25 +118,22 @@
 					// 	address: 'Kolokotroni 5',
 					// },
 				],
-				cupsPerWeek: 3,
-				hoursPerCup: 3,
-				cupsLost: 1,
 				friends: [
-					{
-						id: 1,
-						name: 'Aspa',
-						profilePicture: {},
-					},
-					{
-						id: 2,
-						name: 'Myriam',
-						profilePicture: {},
-					},
-					{
-						id: 3,
-						name: 'Alex',
-						profilePicture: {},
-					}
+					// {
+					// 	id: 1,
+					// 	name: 'Aspa',
+					// 	profilePicture: {},
+					// },
+					// {
+					// 	id: 2,
+					// 	name: 'Myriam',
+					// 	profilePicture: {},
+					// },
+					// {
+					// 	id: 3,
+					// 	name: 'Alex',
+					// 	profilePicture: {},
+					// }
 				]
 			};
 		},
