@@ -29,10 +29,20 @@ type User @model @auth(rules: [{ allow: owner }]) {
 	loyaltyBalance: Int
 	noOfCupsUsed: Int
 	noOfCupsLost: Int
+	pointsUsed: Int
+	noOfRewards: Int
 	address: Address
+    profilePicture: S3Object
 	stores: [ID]
 	deposits: [Deposit]
 	friends: [ID]
+}
+
+type S3Object {
+	level: String!
+	filePath: String!
+	filename: String!
+	contentType: String!
 }
 
 type Deposit {
