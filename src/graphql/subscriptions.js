@@ -34,6 +34,7 @@ export const onCreateUser = /* GraphQL */ `
         filename
         contentType
       }
+      preferences
       stores
       deposits {
         amount
@@ -80,6 +81,7 @@ export const onUpdateUser = /* GraphQL */ `
         filename
         contentType
       }
+      preferences
       stores
       deposits {
         amount
@@ -126,6 +128,7 @@ export const onDeleteUser = /* GraphQL */ `
         filename
         contentType
       }
+      preferences
       stores
       deposits {
         amount

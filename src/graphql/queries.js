@@ -34,6 +34,7 @@ export const getUser = /* GraphQL */ `
         filename
         contentType
       }
+      preferences
       stores
       deposits {
         amount
@@ -85,6 +86,7 @@ export const listUsers = /* GraphQL */ `
           filename
           contentType
         }
+        preferences
         stores
         deposits {
           amount
