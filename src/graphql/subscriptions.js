@@ -18,6 +18,8 @@ export const onCreateUser = /* GraphQL */ `
       noOfCupsLost
       pointsUsed
       noOfRewards
+      cupsPerWeek
+      hoursPerCup
       address {
         country
         city
@@ -65,6 +67,8 @@ export const onUpdateUser = /* GraphQL */ `
       noOfCupsLost
       pointsUsed
       noOfRewards
+      cupsPerWeek
+      hoursPerCup
       address {
         country
         city
@@ -112,6 +116,8 @@ export const onDeleteUser = /* GraphQL */ `
       noOfCupsLost
       pointsUsed
       noOfRewards
+      cupsPerWeek
+      hoursPerCup
       address {
         country
         city

@@ -18,6 +18,8 @@ export const getUser = /* GraphQL */ `
       noOfCupsLost
       pointsUsed
       noOfRewards
+      cupsPerWeek
+      hoursPerCup
       address {
         country
         city
@@ -70,6 +72,8 @@ export const listUsers = /* GraphQL */ `
         noOfCupsLost
         pointsUsed
         noOfRewards
+        cupsPerWeek
+        hoursPerCup
         address {
           country
           city
