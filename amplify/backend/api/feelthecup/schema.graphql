@@ -33,6 +33,7 @@ type User @model @auth(rules: [{ allow: owner }]) {
 	noOfRewards: Int
 	address: Address
     profilePicture: S3Object
+	preferences: AWSJSON
 	stores: [ID]
 	deposits: [Deposit]
 	friends: [ID]
