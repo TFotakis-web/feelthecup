@@ -3,18 +3,23 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { store } from '@/plugins/store/store';
 
 import auth from '@/plugins/router/auth';
+import tabs from '@/plugins/router/tabs';
 import various from '@/plugins/router/various';
 
 const routes = [
 	...auth,
 	{
 		path: '',
-		name: 'BaseLayout',
+		redirect: '/home'
+	},
+	{
+		path: '',
 		component: () => import('@/components/base/Tabs'),
 		children: [
-			...various,
-		],
+			...tabs
+		]
 	},
+	...various,
 	{
 		path: '/:catchAll(.*)',
 		name: 'NotFound',
