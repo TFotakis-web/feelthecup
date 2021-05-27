@@ -31,6 +31,8 @@ type User @model @auth(rules: [{ allow: owner }]) {
 	noOfCupsLost: Int
 	pointsUsed: Int
 	noOfRewards: Int
+	cupsPerWeek: Float
+	hoursPerCup: Float
 	address: Address
     profilePicture: S3Object
 	preferences: AWSJSON
