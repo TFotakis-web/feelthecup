@@ -27,6 +27,8 @@ const initUserProfile = (user) => ({
 	noOfCupsLost: 0,
 	pointsUsed: 0,
 	noOfRewards: 0,
+	cupsPerWeek: 0,
+	hoursPerCup: 0,
 	address: {
 		country: '',
 		city: '',
