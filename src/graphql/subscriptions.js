@@ -16,6 +16,8 @@ export const onCreateUser = /* GraphQL */ `
       loyaltyBalance
       noOfCupsUsed
       noOfCupsLost
+      pointsUsed
+      noOfRewards
       address {
         country
         city
@@ -25,6 +27,12 @@ export const onCreateUser = /* GraphQL */ `
         street
         number
         postalCode
+      }
+      profilePicture {
+        level
+        filePath
+        filename
+        contentType
       }
       stores
       deposits {
@@ -54,6 +62,8 @@ export const onUpdateUser = /* GraphQL */ `
       loyaltyBalance
       noOfCupsUsed
       noOfCupsLost
+      pointsUsed
+      noOfRewards
       address {
         country
         city
@@ -63,6 +73,12 @@ export const onUpdateUser = /* GraphQL */ `
         street
         number
         postalCode
+      }
+      profilePicture {
+        level
+        filePath
+        filename
+        contentType
       }
       stores
       deposits {
@@ -92,6 +108,8 @@ export const onDeleteUser = /* GraphQL */ `
       loyaltyBalance
       noOfCupsUsed
       noOfCupsLost
+      pointsUsed
+      noOfRewards
       address {
         country
         city
@@ -101,6 +119,12 @@ export const onDeleteUser = /* GraphQL */ `
         street
         number
         postalCode
+      }
+      profilePicture {
+        level
+        filePath
+        filename
+        contentType
       }
       stores
       deposits {

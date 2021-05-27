@@ -16,6 +16,8 @@ export const getUser = /* GraphQL */ `
       loyaltyBalance
       noOfCupsUsed
       noOfCupsLost
+      pointsUsed
+      noOfRewards
       address {
         country
         city
@@ -25,6 +27,12 @@ export const getUser = /* GraphQL */ `
         street
         number
         postalCode
+      }
+      profilePicture {
+        level
+        filePath
+        filename
+        contentType
       }
       stores
       deposits {
@@ -59,6 +67,8 @@ export const listUsers = /* GraphQL */ `
         loyaltyBalance
         noOfCupsUsed
         noOfCupsLost
+        pointsUsed
+        noOfRewards
         address {
           country
           city
@@ -68,6 +78,12 @@ export const listUsers = /* GraphQL */ `
           street
           number
           postalCode
+        }
+        profilePicture {
+          level
+          filePath
+          filename
+          contentType
         }
         stores
         deposits {
