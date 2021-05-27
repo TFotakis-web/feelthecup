@@ -1,5 +1,5 @@
 <template>
-	<base-layout :page-title="$t('views.userProfile.hi') + ', ' + user.fullName">
+	<base-layout :page-title="$t('views.userProfile.hi') + ', ' + userProfile.name">
 		<template v-slot:actions-end>
 			<ion-button :router-link="{name: 'Notifications' }">
 				<ion-icon :icon="$ionicons.notificationsOutline" slot="icon-only"/>
@@ -17,15 +17,15 @@
 		<ion-row>
 			<ion-col>
 				<ion-avatar style="border: 1px solid black">
-					<s3-ion-img :s3-object="user.profilePicture" :default-url="$store.getters['pageStructure/defaultProfilePicture']"/>
+					<s3-ion-img :s3-object="userProfile.profilePicture" :default-url="$store.getters['pageStructure/defaultProfilePicture']"/>
 				</ion-avatar>
 			</ion-col>
 			<ion-col>
-				<h5 class="ion-no-margin ion-margin-top">{{ pointsUsed }}</h5>
+				<h5 class="ion-no-margin ion-margin-top">{{ userProfile.pointsUsed }}</h5>
 				<p class="ion-no-margin">{{ $t('views.userProfile.pointUsed') }}</p>
 			</ion-col>
 			<ion-col>
-				<h5 class="ion-no-margin ion-margin-top">{{ rewards }}</h5>
+				<h5 class="ion-no-margin ion-margin-top">{{ userProfile.noOfRewards }}</h5>
 				<p class="ion-no-margin">{{ $t('views.userProfile.rewards') }}</p>
 			</ion-col>
 		</ion-row>
@@ -38,7 +38,8 @@
 		</ion-row>
 		<ion-row class="ion-row-full-width" style="background-color: var(--ion-color-accent); padding-top: 25px;">
 			<ion-col class="ion-text-center ion-align-self-center">
-				<p v-for="(recent, i) in recents" :key="i">
+				<p v-if="recents.length === 0">{{ $t('views.userProfile.noRecents') }}</p>
+				<p v-else v-for="(recent, i) in recents" :key="i">
 					<span style="font-size: large; font-weight: bold">{{ i + 1 }}. {{ recent.shop }}, </span>
 					<span style="font-size: small;">{{ recent.address }}</span>
 				</p>
@@ -89,7 +90,7 @@
 <script>
 	import BaseLayout from '@/components/base/BaseLayout';
 	import S3IonImg from '@/components/structure/S3IonImg';
-	import { mapActions } from 'vuex';
+	import { mapActions, mapGetters } from 'vuex';
 
 
 	export default {
@@ -100,25 +101,21 @@
 		},
 		data() {
 			return {
-				user: {
-					fullName: 'Pandelis',
-					profilePicture: {},
-				},
 				pointsUsed: 300,
 				rewards: 2,
 				recents: [
-					{
-						shop: 'Coffee Jerry',
-						address: 'Amarousiou 32',
-					},
-					{
-						shop: 'Cup stories',
-						address: 'Vouliagmenis 118',
-					},
-					{
-						shop: 'Starbucks',
-						address: 'Kolokotroni 5',
-					},
+					// {
+					// 	shop: 'Coffee Jerry',
+					// 	address: 'Amarousiou 32',
+					// },
+					// {
+					// 	shop: 'Cup stories',
+					// 	address: 'Vouliagmenis 118',
+					// },
+					// {
+					// 	shop: 'Starbucks',
+					// 	address: 'Kolokotroni 5',
+					// },
 				],
 				cupsPerWeek: 3,
 				hoursPerCup: 3,
@@ -151,6 +148,9 @@
 			useCup(friendId) {
 				console.log(`Used cup: ${friendId}`);
 			}
+		},
+		computed: {
+			...mapGetters('auth', ['userProfile'])
 		},
 	};
 </script>
