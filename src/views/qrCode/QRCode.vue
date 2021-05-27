@@ -34,6 +34,7 @@
 <script>
 	import BaseLayout from '@/components/base/BaseLayout';
 	import QrcodeVue from 'qrcode.vue';
+	import { mapGetters } from 'vuex';
 
 	export default {
 		name: 'QRCode',
@@ -43,7 +44,6 @@
 		},
 		data() {
 			return {
-				qrCodeUrl: 'www.example.com',
 				pointsText: '+100 points',
 				timeText: '20:05 min',
 				timeInUse: '45:00',
@@ -52,6 +52,12 @@
 		mounted() {
 			this.$store.commit('pageStructure/setPageTitle', () => window.vm.$t('views.qrcode.pageTitle'));
 			this.$store.commit('pageStructure/setPageBackButton', false);
+		},
+		computed: {
+			...mapGetters('auth', ['userProfile']),
+			qrCodeUrl() {
+				return this.userProfile.sub;
+			}
 		},
 	};
 </script>
