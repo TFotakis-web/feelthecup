@@ -25,6 +25,8 @@ const initUserProfile = (user) => ({
 	loyaltyBalance: 0,
 	noOfCupsUsed: 0,
 	noOfCupsLost: 0,
+	pointsUsed: 0,
+	noOfRewards: 0,
 	address: {
 		country: null,
 		city: null,
@@ -35,6 +37,7 @@ const initUserProfile = (user) => ({
 		number: null,
 		postalCode: null,
 	},
+	profilePicture: null,
 	stores: [],
 	deposits: [],
 	friends: [],
