@@ -54,7 +54,8 @@
       "cup": "cup",
       "lost": "lost",
       "feelTheCupForFriends": "FeelTheCup for friends",
-      "noRecents": "There are no recents"
+      "noRecents": "There are no recents",
+      "noFriends": "There are no friends"
     },
     "home": {
       "itsCoffeeTime": "Its coffee time!",

@@ -54,7 +54,8 @@
       "cup": "cup",
       "lost": "χαμένα",
       "feelTheCupForFriends": "FeelTheCup με την παρέα",
-      "noRecents": "Δεν υπάρχουν πρόσφατα"
+      "noRecents": "Δεν υπάρχουν πρόσφατα",
+      "noFriends": "Δεν υπάρχουν φίλοι"
     },
     "home": {
       "itsCoffeeTime": "Ώρα για καφέ!",
