@@ -53,7 +53,8 @@
       "hoursPerCup": "h",
       "cup": "cup",
       "lost": "lost",
-      "feelTheCupForFriends": "FeelTheCup for friends"
+      "feelTheCupForFriends": "FeelTheCup for friends",
+      "noRecents": "There are no recents"
     },
     "home": {
       "itsCoffeeTime": "Its coffee time!",

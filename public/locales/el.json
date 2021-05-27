@@ -53,7 +53,8 @@
       "hoursPerCup": "ώ",
       "cup": "cup",
       "lost": "χαμένα",
-      "feelTheCupForFriends": "FeelTheCup με την παρέα"
+      "feelTheCupForFriends": "FeelTheCup με την παρέα",
+      "noRecents": "Δεν υπάρχουν πρόσφατα"
     },
     "home": {
       "itsCoffeeTime": "Ώρα για καφέ!",
