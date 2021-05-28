@@ -4,19 +4,12 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
 	/** primary **/
-	/*--ion-color-primary: #3880ff;*/
-	/*--ion-color-primary-rgb: 56, 128, 255;*/
-	/*--ion-color-primary-contrast: #ffffff;*/
-	/*--ion-color-primary-contrast-rgb: 255, 255, 255;*/
-	/*--ion-color-primary-shade: #3171e0;*/
-	/*--ion-color-primary-tint: #4c8dff;*/
-
-	--ion-color-primary: #F3CD32;
-	--ion-color-primary-rgb: 243, 205, 50;
-	--ion-color-primary-contrast: #000000;
-	--ion-color-primary-contrast-rgb: 0, 0, 0;
-	--ion-color-primary-shade: #bc9f27;
-	--ion-color-primary-tint: #f3cd4b;
+	--ion-color-primary: #3880ff;
+	--ion-color-primary-rgb: 56, 128, 255;
+	--ion-color-primary-contrast: #ffffff;
+	--ion-color-primary-contrast-rgb: 255, 255, 255;
+	--ion-color-primary-shade: #3171e0;
+	--ion-color-primary-tint: #4c8dff;
 
 	/** secondary **/
 	--ion-color-secondary: #3dc2ff;
@@ -82,7 +75,25 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-light-shade: #d7d8da;
 	--ion-color-light-tint: #f5f6f9;
 
-	--ion-color-accent: #F3CD32
+
+	--ion-background-color: #ffffff;
+	--ion-background-color-rgb: 255, 255, 255;
+
+	--ion-color-accent: #f3cd32;
+	--ion-color-accent-rgb: 243,205,50;
+	--ion-color-accent-contrast: #000000;
+	--ion-color-accent-contrast-rgb: 0,0,0;
+	--ion-color-accent-shade: #d6b42c;
+	--ion-color-accent-tint: #f4d247;
+}
+
+.ion-color-accent {
+  --ion-color-base: var(--ion-color-accent);
+  --ion-color-base-rgb: var(--ion-color-accent-rgb);
+  --ion-color-contrast: var(--ion-color-accent-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
+  --ion-color-shade: var(--ion-color-accent-shade);
+  --ion-color-tint: var(--ion-color-accent-tint);
 }
 
 /*
