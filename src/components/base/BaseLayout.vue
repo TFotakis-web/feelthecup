@@ -21,10 +21,15 @@
 				<slot/>
 			</ion-grid>
 		</ion-content>
+		<Tabs/>
 	</ion-page>
 </template>
 <script>
+	import Tabs from './Tabs.vue';
+
+
 	export default {
+	components: { Tabs },
 		name: 'BaseLayout',
 		props: ['pageTitle', 'contentColor'],
 	};
