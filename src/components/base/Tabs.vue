@@ -1,33 +1,60 @@
 <template>
-	<ion-page>
-		<ion-tabs>
-			<ion-tab-bar slot="bottom">
-				<ion-tab-button tab="Home" :href="$router.resolve({ name: 'Home'}).fullPath">
-					<ion-icon :icon="$ionicons.homeOutline"/>
-					<ion-label>{{ $t('views.homePage.pageTitle') }}</ion-label>
-				</ion-tab-button>
-				<ion-tab-button tab="Map" :href="$router.resolve({ name: 'Map'}).fullPath">
-					<ion-icon :icon="$ionicons.locationOutline"/>
-					<ion-label>{{ $t('views.map.pageTitle') }}</ion-label>
-				</ion-tab-button>
-				<ion-tab-button tab="QRCode" :href="$router.resolve({ name: 'QRCode'}).fullPath">
-					<ion-icon :icon="$ionicons.qrCodeOutline"/>
-					<ion-label>{{ $t('views.qrcode.pageTitle') }}</ion-label>
-				</ion-tab-button>
-				<ion-tab-button tab="Rewards" :href="$router.resolve({ name: 'Rewards'}).fullPath">
-					<ion-icon :icon="$ionicons.pintOutline"/>
-					<ion-label>{{ $t('views.rewards.pageTitle') }}</ion-label>
-				</ion-tab-button>
-				<ion-tab-button tab="UserProfile" :href="$router.resolve({ name: 'UserProfile'}).fullPath">
-					<ion-icon :icon="$ionicons.personCircleOutline"/>
-					<ion-label>{{ $t('views.userProfile.pageTitle') }}</ion-label>
-				</ion-tab-button>
-			</ion-tab-bar>
-		</ion-tabs>
-	</ion-page>
+	<ion-footer v-if="show">
+		<ion-toolbar>
+			<ion-buttons>
+				<ion-grid fixed>
+					<ion-row>
+						<ion-col size="12" size-sm="8" offset-sm="2" size-md="6" offset-md="3" size-lg="4" offset-lg="4" size-xl="4" offset-xl="4">
+							<ion-row class="ion-text-center">
+								<ion-col v-for="button in buttons" :key="button.routerLinkName">
+									<ion-button :router-link="{ name: button.routerLinkName}" :color="$route.name ===  button.routerLinkName ? 'accent' : ''">
+										<ion-icon :icon="button.icon" slot="icon-only"/>
+									</ion-button>
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+			</ion-buttons>
+		</ion-toolbar>
+	</ion-footer>
 </template>
 <script>
 	export default {
 		name: 'Tabs',
+		data() {
+			return {
+				buttons: [
+					{
+						routerLinkName: 'Home',
+						icon: this.$ionicons.homeOutline
+					},
+					{
+						routerLinkName: 'Map',
+						icon: this.$ionicons.locationOutline
+					},
+					{
+						routerLinkName: 'QRCode',
+						icon: this.$ionicons.qrCodeOutline
+					},
+					{
+						routerLinkName: 'Rewards',
+						icon: this.$ionicons.pintOutline
+					},
+					{
+						routerLinkName: 'UserProfile',
+						icon: this.$ionicons.personCircleOutline
+					},
+				]
+			}
+		},
+		computed: {
+			routerLinkNames() {
+				return Array.from(this.buttons, b => b.routerLinkName);
+			},
+			show() {
+				return this.routerLinkNames.includes(this.$route.name);
+			}
+		},
 	};
 </script>
