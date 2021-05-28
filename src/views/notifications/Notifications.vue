@@ -13,7 +13,8 @@
 		},
 		mounted() {
 			this.$store.commit('pageStructure/setPageTitle', () => window.vm.$t('views.notifications.pageTitle'));
-			this.$store.commit('pageStructure/setPageBackButton', false);
+			this.$store.commit('pageStructure/setPageBackButton', true);
+			this.$store.commit('pageStructure/setBackButtonDefaultHref', this.$router.resolve({ name: 'Home' }).fullPath);
 		},
 	};
 </script>
