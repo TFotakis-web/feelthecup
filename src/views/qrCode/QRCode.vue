@@ -1,5 +1,5 @@
 <template>
-	<base-layout :page-title="$t('views.qrcode.pageTitle')" content-color="primary">
+	<base-layout :page-title="$t('views.qrcode.pageTitle')" content-color="accent">
 		<ion-row>
 			<ion-col class="ion-text-center">
 				<h1 class="ion-text-center ion-margin-bottom">{{ $t('actions.return') }}</h1>
@@ -10,7 +10,7 @@
 		</ion-row>
 		<ion-row>
 			<ion-col size="12" class="ion-text-center">
-				<ion-item color="primary" class="ion-text-center" style="border: 1px solid black; border-radius: 10px; width: fit-content; display: inline-block">
+				<ion-item color="accent" class="ion-text-center" style="border: 1px solid black; border-radius: 10px; width: fit-content; display: inline-block">
 					<ion-icon :icon="$ionicons.giftOutline" size="large" class="ion-align-self-center"/>
 					<div class="ion-padding" style="display: inline-block">
 						<h6 class="ion-no-margin"><strong>{{ pointsText }}</strong></h6>
@@ -20,7 +20,7 @@
 				</ion-item>
 			</ion-col>
 			<ion-col size="12" class="ion-text-center">
-				<ion-item color="primary" class="ion-text-center" style="border: 1px solid black; border-radius: 10px; width: fit-content; display: inline-block">
+				<ion-item color="accent" class="ion-text-center" style="border: 1px solid black; border-radius: 10px; width: fit-content; display: inline-block">
 					<ion-icon :icon="$ionicons.timeOutline" size="large" class="ion-align-self-center"/>
 					<div class="ion-padding" style="display: inline-block">
 						<h6 class="ion-no-margin"><strong>{{ $t('views.qrcode.timeInUse') }}</strong></h6>
