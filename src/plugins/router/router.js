@@ -8,17 +8,7 @@ import various from '@/plugins/router/various';
 
 const routes = [
 	...auth,
-	{
-		path: '',
-		redirect: '/home'
-	},
-	{
-		path: '',
-		component: () => import('@/components/base/Tabs'),
-		children: [
-			...tabs
-		]
-	},
+	...tabs,
 	...various,
 	{
 		path: '/:catchAll(.*)',
