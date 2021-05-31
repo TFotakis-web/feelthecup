@@ -134,7 +134,7 @@
 					// 	name: 'Alex',
 					// 	profilePicture: {},
 					// }
-				]
+				],
 			};
 		},
 		mounted() {
@@ -145,10 +145,10 @@
 			...mapActions('auth', ['signOut']),
 			useCup(friendId) {
 				console.log(`Used cup: ${friendId}`);
-			}
+			},
 		},
 		computed: {
-			...mapGetters('auth', ['userProfile'])
+			...mapGetters('auth', ['userProfile']),
 		},
 	};
 </script>

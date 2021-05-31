@@ -4,6 +4,7 @@
 <script>
 	import { Storage } from 'aws-amplify';
 
+
 	export default {
 		name: 'S3IonImg',
 		props: ['defaultUrl', 's3Object'],
@@ -15,7 +16,7 @@
 		watch: {
 			s3Object: {
 				immediate: true,
-				handler: async function(newValue) {
+				handler: async function (newValue) {
 					if (!newValue || !newValue.filePath || !newValue.filename || !newValue.level) {
 						this.url = this.defaultUrl;
 						return;

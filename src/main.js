@@ -36,6 +36,7 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import '@/theme/variables.css';
 
+
 Amplify.configure(aws_exports);
 Auth.configure(aws_exports);
 API.configure(aws_exports);
@@ -61,6 +62,7 @@ app.use(VueAxios, axios);
 
 import * as IonComponents from '@ionic/vue';
 
+
 Object.keys(IonComponents).forEach(key => {
 	if (/^Ion[A-Z]\w+$/.test(key)) {
 		app.component(key, IonComponents[key]);
@@ -68,6 +70,7 @@ Object.keys(IonComponents).forEach(key => {
 });
 
 import * as Ionicons from 'ionicons/icons';
+
 
 const ioniconsOutline = {};
 Object.keys(Ionicons).forEach(key => {

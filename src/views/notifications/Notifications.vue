@@ -6,6 +6,7 @@
 <script>
 	import BaseLayout from '@/components/base/BaseLayout';
 
+
 	export default {
 		name: 'Notifications',
 		components: {

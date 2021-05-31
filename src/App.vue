@@ -46,7 +46,7 @@
 <style>
 	input:-webkit-autofill {
 		height: 0;
-		-webkit-box-shadow:0 0 0 10px white inset;
+		-webkit-box-shadow: 0 0 0 10px white inset;
 		-webkit-text-fill-color: black;
 		font-weight: 500;
 	}
@@ -74,13 +74,14 @@
 	}
 
 	.no-arrows input[type=number] {
-		-moz-appearance:textfield; /* Firefox */
+		-moz-appearance: textfield; /* Firefox */
 	}
 
 	ion-menu ion-content ion-list {
 		--border-width: 1px;
 		border-bottom: var(--border-width) solid var(--ion-color-step-150, #d7d8da) !important;
 	}
+
 	.list-lines-none,
 	.list-md-lines-none {
 		--border-width: 0;

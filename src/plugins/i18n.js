@@ -3,6 +3,7 @@ import $http from '@/plugins/axios';
 import { store } from '@/plugins/store/store';
 import Cookies from 'js-cookie';
 
+
 const $i18n = createI18n({
 	fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
 	messages: {

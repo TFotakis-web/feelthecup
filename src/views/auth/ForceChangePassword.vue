@@ -40,6 +40,7 @@
 	import localeDropdown from '@/components/structure/localeDropdown';
 	import loadingBtn from '@/components/structure/loadingBtn';
 
+
 	export default {
 		name: 'forceChangePassword',
 		components: {

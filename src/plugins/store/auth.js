@@ -4,6 +4,7 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { getUser } from '@/graphql/queries';
 import { createUser, updateUser } from '@/graphql/mutations';
 
+
 const initState = () => ({
 	cognitoUser: null,
 	user: null,
@@ -41,7 +42,7 @@ const initUserProfile = (user) => ({
 	},
 	profilePicture: null,
 	preferences: JSON.stringify({
-		locale: ''
+		locale: '',
 	}),
 	stores: [],
 	deposits: [],
@@ -190,7 +191,7 @@ export const auth = {
 				let userProfile = await API.graphql(graphqlOperation(getUser, { id: user.attributes.sub }));
 				userProfile = userProfile.data.getUser;
 				if (!userProfile) {
-					userProfile = await API.graphql(graphqlOperation(createUser, { input: initUserProfile(user)}));
+					userProfile = await API.graphql(graphqlOperation(createUser, { input: initUserProfile(user) }));
 					userProfile = userProfile.data.createUser;
 				} else if (!compareKeys(userProfile, initUserProfile(user))) {
 					userProfile = Object.assign(userProfile, initUserProfile(user));

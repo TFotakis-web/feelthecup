@@ -36,6 +36,7 @@
 	import QrcodeVue from 'qrcode.vue';
 	import { mapGetters } from 'vuex';
 
+
 	export default {
 		name: 'QRCode',
 		components: {
@@ -57,7 +58,7 @@
 			...mapGetters('auth', ['userProfile']),
 			qrCodeUrl() {
 				return this.userProfile.sub;
-			}
+			},
 		},
 	};
 </script>

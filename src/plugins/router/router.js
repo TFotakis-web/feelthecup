@@ -6,6 +6,7 @@ import auth from '@/plugins/router/auth';
 import tabs from '@/plugins/router/tabs';
 import various from '@/plugins/router/various';
 
+
 const routes = [
 	...auth,
 	...tabs,
@@ -53,7 +54,9 @@ function hasPermissions(route) {
 }
 
 function hasPermissionsByName(name) {
-	if (!name) return false;
+	if (!name) {
+		return false;
+	}
 	const route = router.resolve({ name });
 	return hasPermissions(route);
 }

@@ -80,20 +80,20 @@ http://ionicframework.com/docs/theming/ */
 	--ion-background-color-rgb: 255, 255, 255;
 
 	--ion-color-accent: #f3cd32;
-	--ion-color-accent-rgb: 243,205,50;
+	--ion-color-accent-rgb: 243, 205, 50;
 	--ion-color-accent-contrast: #000000;
-	--ion-color-accent-contrast-rgb: 0,0,0;
+	--ion-color-accent-contrast-rgb: 0, 0, 0;
 	--ion-color-accent-shade: #d6b42c;
 	--ion-color-accent-tint: #f4d247;
 }
 
 .ion-color-accent {
-  --ion-color-base: var(--ion-color-accent);
-  --ion-color-base-rgb: var(--ion-color-accent-rgb);
-  --ion-color-contrast: var(--ion-color-accent-contrast);
-  --ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
-  --ion-color-shade: var(--ion-color-accent-shade);
-  --ion-color-tint: var(--ion-color-accent-tint);
+	--ion-color-base: var(--ion-color-accent);
+	--ion-color-base-rgb: var(--ion-color-accent-rgb);
+	--ion-color-contrast: var(--ion-color-accent-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
+	--ion-color-shade: var(--ion-color-accent-shade);
+	--ion-color-tint: var(--ion-color-accent-tint);
 }
 
 /*

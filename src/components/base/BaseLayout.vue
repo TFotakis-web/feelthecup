@@ -1,16 +1,16 @@
 <template>
 	<ion-page>
-<!--		<ion-header>-->
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<ion-back-button :default-href="$store.getters['pageStructure/backButtonDefaultHref']" v-if="$store.getters['pageStructure/pageBackButton']"/>
-				</ion-buttons>
-				<ion-title>{{ pageTitle }}</ion-title>
-				<ion-buttons slot="end">
-					<slot name="actions-end"/>
-				</ion-buttons>
-			</ion-toolbar>
-<!--		</ion-header>-->
+		<!--		<ion-header>-->
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<ion-back-button :default-href="$store.getters['pageStructure/backButtonDefaultHref']" v-if="$store.getters['pageStructure/pageBackButton']"/>
+			</ion-buttons>
+			<ion-title>{{ pageTitle }}</ion-title>
+			<ion-buttons slot="end">
+				<slot name="actions-end"/>
+			</ion-buttons>
+		</ion-toolbar>
+		<!--		</ion-header>-->
 		<ion-content :fullscreen="true" :color="contentColor">
 			<ion-header collapse="condense">
 				<ion-toolbar>
@@ -29,7 +29,7 @@
 
 
 	export default {
-	components: { Tabs },
+		components: { Tabs },
 		name: 'BaseLayout',
 		props: ['pageTitle', 'contentColor'],
 	};

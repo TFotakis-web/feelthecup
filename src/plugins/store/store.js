@@ -2,6 +2,7 @@ import { createStore } from 'vuex';
 import { pageStructure } from '@/plugins/store/pageStructure';
 import { auth } from '@/plugins/store/auth';
 
+
 const initState = () => ({});
 
 export const store = createStore({

@@ -57,6 +57,7 @@
 	import BaseLayout from '@/components/base/BaseLayout';
 	import { mapGetters } from 'vuex';
 
+
 	export default {
 		name: 'Home',
 		components: {
@@ -75,7 +76,7 @@
 			this.$store.commit('pageStructure/setPageBackButton', false);
 		},
 		computed: {
-			...mapGetters('auth', ['userProfile'])
+			...mapGetters('auth', ['userProfile']),
 		},
 	};
 </script>

@@ -27,26 +27,26 @@
 				buttons: [
 					{
 						routerLinkName: 'Home',
-						icon: this.$ionicons.homeOutline
+						icon: this.$ionicons.homeOutline,
 					},
 					{
 						routerLinkName: 'Map',
-						icon: this.$ionicons.locationOutline
+						icon: this.$ionicons.locationOutline,
 					},
 					{
 						routerLinkName: 'QRCode',
-						icon: this.$ionicons.qrCodeOutline
+						icon: this.$ionicons.qrCodeOutline,
 					},
 					{
 						routerLinkName: 'Rewards',
-						icon: this.$ionicons.pintOutline
+						icon: this.$ionicons.pintOutline,
 					},
 					{
 						routerLinkName: 'UserProfile',
-						icon: this.$ionicons.personCircleOutline
+						icon: this.$ionicons.personCircleOutline,
 					},
-				]
-			}
+				],
+			};
 		},
 		computed: {
 			routerLinkNames() {
@@ -54,7 +54,7 @@
 			},
 			show() {
 				return this.routerLinkNames.includes(this.$route.name);
-			}
+			},
 		},
 	};
 </script>

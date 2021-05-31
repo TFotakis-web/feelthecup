@@ -33,6 +33,7 @@
 	import { Storage } from 'aws-amplify';
 	import loadingBtn from '@/components/structure/loadingBtn';
 
+
 	export default {
 		name: 'fileInput',
 		components: {
