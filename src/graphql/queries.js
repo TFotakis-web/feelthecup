@@ -145,6 +145,13 @@ export const getStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner
@@ -184,6 +191,13 @@ export const listStores = /* GraphQL */ `
           startingAt
           expiringAt
         }
+        logo {
+          level
+          filePath
+          filename
+          contentType
+        }
+        preferences
         createdAt
         updatedAt
         owner

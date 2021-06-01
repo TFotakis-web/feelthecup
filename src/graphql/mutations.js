@@ -199,6 +199,13 @@ export const createStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner
@@ -247,6 +254,13 @@ export const updateStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner
@@ -295,6 +309,13 @@ export const deleteStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner

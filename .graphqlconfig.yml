@@ -1,5 +1,5 @@
 projects:
-  feelthecupDynamoDB:
+  feelthecup:
     schemaPath: amplify/backend/api/feelthecup/build/schema.graphql
     includes:
       - src/graphql/**/*.js
@@ -13,17 +13,6 @@ projects:
         region: eu-central-1
         apiId: null
         maxDepth: 3
-  feelthecup:
-    schemaPath: src/graphql/schema.json
-    includes:
-      - src/graphql/**/*.js
-    excludes:
-      - ./amplify/**
-    extensions:
-      amplify:
-        codeGenTarget: javascript
-        generatedFileName: ''
-        docsFilePath: src/graphql
 extensions:
   amplify:
     version: 3

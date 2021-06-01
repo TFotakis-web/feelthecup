@@ -187,6 +187,13 @@ export const onCreateStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner
@@ -232,6 +239,13 @@ export const onUpdateStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner
@@ -277,6 +291,13 @@ export const onDeleteStore = /* GraphQL */ `
         startingAt
         expiringAt
       }
+      logo {
+        level
+        filePath
+        filename
+        contentType
+      }
+      preferences
       createdAt
       updatedAt
       owner

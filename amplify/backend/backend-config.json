@@ -1,27 +1,39 @@
 {
-  "function": {
-    "feelthecup62d6039162d60391PostConfirmation": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
   "auth": {
-    "feelthecup62d6039162d60391": {
-      "service": "Cognito",
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "feelthecup62d6039162d60391PostConfirmation",
-          "triggerProvider": "Cognito",
+          "category": "auth",
+          "resourceName": "feelthecup41af5a6141af5a61",
           "attributes": [
-            "Arn",
-            "Name"
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
           ]
         }
-      ],
+      ]
+    },
+    "feelthecup41af5a6141af5a61": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
       "customAuth": false
+    }
+  },
+  "storage": {
+    "s356798b98": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
     }
   },
   "api": {
@@ -33,7 +45,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authfeelthecup62d6039162d60391"
+              "userPoolId": "authfeelthecup41af5a6141af5a61"
             }
           },
           "additionalAuthenticationProviders": [
@@ -43,19 +55,6 @@
           ]
         }
       }
-    }
-  },
-  "storage": {
-    "s3e5b58469": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "hosting": {
-    "amplifyhosting": {
-      "service": "amplifyhosting",
-      "providerPlugin": "awscloudformation",
-      "type": "manual"
     }
   }
 }

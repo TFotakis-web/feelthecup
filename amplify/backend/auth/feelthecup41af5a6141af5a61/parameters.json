@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "feelthecup62d60391_identitypool_62d60391",
+    "identityPoolName": "feelthecup41af5a61_identitypool_41af5a61",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "feelth62d60391",
-    "userPoolName": "feelthecup62d60391_userpool_62d60391",
+    "resourceNameTruncated": "feelth41af5a61",
+    "userPoolName": "feelthecup41af5a61_userpool_41af5a61",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -23,33 +23,28 @@
         "Requires Symbols"
     ],
     "requiredAttributes": [
-        "birthdate",
-        "email",
-        "family_name",
-        "gender",
-        "name",
-        "phone_number"
+        "email"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
         "address",
+        "birthdate",
+        "family_name",
         "middle_name",
+        "gender",
         "locale",
         "given_name",
+        "name",
         "nickname",
+        "phone_number",
         "preferred_username",
         "picture",
         "profile",
         "updated_at",
         "website",
         "zoneinfo",
-        "birthdate",
-        "email",
-        "family_name",
-        "gender",
-        "name",
-        "phone_number"
+        "email"
     ],
     "userpoolClientReadAttributes": [
         "address",
@@ -72,10 +67,10 @@
         "email_verified",
         "phone_number_verified"
     ],
-    "userpoolClientLambdaRole": "feelth62d60391_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "feelth41af5a61_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "sharedId": "62d60391",
-    "resourceName": "feelthecup62d6039162d60391",
+    "sharedId": "41af5a61",
+    "resourceName": "feelthecup41af5a6141af5a61",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -94,28 +89,19 @@
     "usernameAttributes": [
         "email"
     ],
-    "userPoolGroups": false,
+    "userPoolGroups": true,
     "adminQueries": false,
-    "triggers": "{\n  \"PostConfirmation\": [\n    \"custom\"\n  ]\n}",
+    "triggers": "{}",
     "hostedUI": false,
-    "userPoolGroupList": [],
+    "userPoolGroupList": [
+        "store"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"feelthecup62d6039162d60391PostConfirmation\"\n  }\n]",
     "breakCircularDependency": true,
     "permissions": [],
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "feelthecup62d6039162d60391PostConfirmation",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        }
-    ]
+    "dependsOn": []
 }

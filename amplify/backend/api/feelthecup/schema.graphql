@@ -65,6 +65,8 @@ type Store @model @auth(rules: [{ allow: owner }]) {
 	tin: Int!
 	active: Boolean!
 	contracts: [Contract]
+	logo: S3Object
+	preferences: AWSJSON
 }
 
 type Address {
