@@ -1,16 +1,15 @@
 import router from '@/plugins/router/router';
 import { Auth } from 'aws-amplify';
 import { API, graphqlOperation } from 'aws-amplify';
-import { getUser } from '@/graphql/queries';
-import { createUser, updateUser } from '@/graphql/mutations';
+import { getStore, getUser } from '@/graphql/queries';
+import { createStore, createUser, updateStore, updateUser } from '@/graphql/mutations';
 
 
 const initState = () => ({
 	cognitoUser: null,
 	user: null,
 	userProfile: null,
-	userModelPermissions: [],
-	userPagePermissions: {},
+	store: null,
 });
 
 const initUserProfile = (user) => ({
@@ -47,6 +46,32 @@ const initUserProfile = (user) => ({
 	stores: [],
 	deposits: [],
 	friends: [],
+});
+
+const initStore = (user) => ({
+	id: user.attributes.sub,
+	uid: user.attributes.sub,
+	phone: user.attributes.phone_number,
+	email: user.attributes.email,
+	cupsDefault: 0,
+	cupsRemaining: 0,
+	address: {
+		country: '',
+		city: '',
+		municipality: '',
+		latitude: null,
+		longitude: null,
+		street: '',
+		number: '',
+		postalCode: null,
+	},
+	tin: 0,
+	active: true,
+	contracts: [],
+	logo: null,
+	preferences: JSON.stringify({
+		locale: '',
+	}),
 });
 
 function compareKeys(a, b) {
@@ -86,6 +111,9 @@ export const auth = {
 		},
 		setUserProfile(state, payload) {
 			state.userProfile = payload;
+		},
+		setStore(state, payload) {
+			state.store = payload;
 		},
 	},
 	actions: {
@@ -176,7 +204,7 @@ export const auth = {
 				return Promise.reject(error);
 			}
 		},
-		async currentAuthenticatedUser({ commit }) {
+		async currentAuthenticatedUser({ commit, getters }) {
 			try {
 				commit('pageStructure/increaseGlobalPendingPromises', null, { root: true });
 
@@ -186,23 +214,41 @@ export const auth = {
 
 				const user = await Auth.currentUserInfo();
 				commit('setUser', user);
-
-				// This has to be synchronous for routing permissions
-				let userProfile = await API.graphql(graphqlOperation(getUser, { id: user.attributes.sub }));
-				userProfile = userProfile.data.getUser;
-				if (!userProfile) {
-					userProfile = await API.graphql(graphqlOperation(createUser, { input: initUserProfile(user) }));
-					userProfile = userProfile.data.createUser;
-				} else if (!compareKeys(userProfile, initUserProfile(user))) {
-					userProfile = Object.assign(userProfile, initUserProfile(user));
-					delete userProfile.createdAt;
-					delete userProfile.updatedAt;
-					delete userProfile.owner;
-					userProfile = await API.graphql(graphqlOperation(updateUser, { input: userProfile }));
-					userProfile = userProfile.data.updateUser;
+				if (getters.isStore) {
+					// This has to be synchronous for routing permissions
+					let store = await API.graphql(graphqlOperation(getStore, { id: user.attributes.sub }));
+					store = store.data.getStore;
+					if (!store) {
+						store = await API.graphql(graphqlOperation(createStore, { input: initStore(user) }));
+						store = store.data.createStore;
+					} else if (!compareKeys(store, initStore(user))) {
+						store = Object.assign(store, initStore(user));
+						delete store.createdAt;
+						delete store.updatedAt;
+						delete store.owner;
+						store = await API.graphql(graphqlOperation(updateStore, { input: store }));
+						store = store.data.updateStore;
+					}
+					commit('setStore', store);
+					return Promise.resolve(store);
+				} else {
+					// This has to be synchronous for routing permissions
+					let userProfile = await API.graphql(graphqlOperation(getUser, { id: user.attributes.sub }));
+					userProfile = userProfile.data.getUser;
+					if (!userProfile) {
+						userProfile = await API.graphql(graphqlOperation(createUser, { input: initUserProfile(user) }));
+						userProfile = userProfile.data.createUser;
+					} else if (!compareKeys(userProfile, initUserProfile(user))) {
+						userProfile = Object.assign(userProfile, initUserProfile(user));
+						delete userProfile.createdAt;
+						delete userProfile.updatedAt;
+						delete userProfile.owner;
+						userProfile = await API.graphql(graphqlOperation(updateUser, { input: userProfile }));
+						userProfile = userProfile.data.updateUser;
+					}
+					commit('setUserProfile', userProfile);
+					return Promise.resolve(userProfile);
 				}
-				commit('setUserProfile', userProfile);
-				return Promise.resolve(userProfile);
 			} catch (error) {
 				console.error(error);
 				await Auth.signOut();
@@ -236,6 +282,7 @@ export const auth = {
 		cognitoUser: (state) => state.cognitoUser,
 		userGroups: (state) => state.cognitoUser?.signInUserSession.idToken.payload['cognito:groups'] || [],
 		isAdmin: (state, getters) => getters.userGroups.includes('admin'),
+		isStore: (state, getters) => getters.userGroups.includes('store'),
 		role: (state) => state.userProfile.role,
 		user: (state) => state.user,
 		userId: (state) => state.user.id,
@@ -244,8 +291,9 @@ export const auth = {
 		email: (state) => state.user.attributes.email,
 		userAttributes: (state) => state.user.attributes,
 		userProfile: (state) => state.userProfile,
+		store: (state) => state.store,
 		userModelPermissions: (state) => state.userModelPermissions,
 		userPagePermissions: (state) => state.userPagePermissions,
-		userPreferences: (state) => JSON.parse(state.userProfile.preferences),
+		preferences: (state, getters) => JSON.parse(getters.isStore ? state.store.preferences : state.userProfile.preferences),
 	},
 };
