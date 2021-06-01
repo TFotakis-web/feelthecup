@@ -79,6 +79,12 @@
     },
     "about": {
       "pageTitle": "About"
+    },
+    "storeHome": {
+      "pageTitle": "Home"
+    },
+    "storeSettings": {
+      "pageTitle": "Settings"
     }
   },
   "fields": {
@@ -147,7 +153,12 @@
     "ok": "OK",
     "cancel": "Cancel",
     "return": "Return",
-    "useCup": "Use Cup!"
+    "useCup": "Use Cup!",
+    "give": "Give",
+    "receive": "Receive",
+    "confirmNewCustomer": "Confirm new customer",
+    "cupLost": "Cup lost",
+    "qrScan": "QR Scan"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",

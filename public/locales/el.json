@@ -79,6 +79,12 @@
     },
     "about": {
       "pageTitle": "Σχετικά"
+    },
+    "storeHome": {
+      "pageTitle": "Αρχική"
+    },
+    "storeSettings": {
+      "pageTitle": "Ρυθμίσεις"
     }
   },
   "fields": {
@@ -147,7 +153,12 @@
     "ok": "OK",
     "cancel": "Άκυρο",
     "return": "Επιστροφή",
-    "useCup": "Χρήση Cup!"
+    "useCup": "Χρήση Cup!",
+    "give": "Παράδοση",
+    "receive": "Παραλαβή",
+    "confirmNewCustomer": "Επιβεβαίωση νέου πελάτη",
+    "cupLost": "Απώλεια ποτηριού",
+    "qrScan": "QR Scan"
   },
   "defaultNotification": {
     "somethingWentWrong": "Κάτι πήγε στραβά...",
