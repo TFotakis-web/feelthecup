@@ -58,3 +58,4 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 team-provider-info.json
+amplify/backend/api/**/resolvers
