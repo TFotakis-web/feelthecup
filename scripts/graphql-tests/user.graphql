@@ -1,0 +1,390 @@
+mutation CreateCustomer {
+	createUser(
+		input: {
+			email: "fotakistzanis@gmail.com"
+			name: "Tzanis"
+			sub: "12345"
+			surname: "Fotakis"
+			id: "12345"
+			birthdate: "1996-09-09"
+			credits: 1.5
+			cup_balance: 10
+			cupsPerWeek: 1.5
+			hoursPerCup: 1.5
+			loyaltyBalance: 10
+			mobileNumber: ""
+			noOfCupsLost: 10
+			noOfCupsUsed: 10
+			noOfRewards: 10
+			pointsUsed: 10
+		}
+	) {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+mutation CreateCustomer1 {
+	createUser(
+		input: {
+			email: "fotakistzanis1@gmail.com"
+			name: "Tzanis1"
+			sub: "123451"
+			surname: "Fotakis1"
+			id: "123451"
+			birthdate: "1996-09-09"
+			credits: 1.5
+			cup_balance: 10
+			cupsPerWeek: 1.5
+			hoursPerCup: 1.5
+			loyaltyBalance: 10
+			mobileNumber: ""
+			noOfCupsLost: 10
+			noOfCupsUsed: 10
+			noOfRewards: 10
+			pointsUsed: 10
+		}
+	) {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+query ListUsers {
+	listUsers {
+		items {
+			id
+			sub
+			name
+			surname
+			email
+			mobileNumber
+			birthdate
+			cup_balance
+			credits
+			loyaltyBalance
+			noOfCupsUsed
+			noOfCupsLost
+			pointsUsed
+			noOfRewards
+			cupsPerWeek
+			hoursPerCup
+			address {
+				country
+				city
+				municipality
+				latitude
+				longitude
+				street
+				number
+				postalCode
+			}
+			profilePicture {
+				level
+				filePath
+				filename
+				contentType
+			}
+			preferences
+			stores
+			deposits {
+				amount
+				payedAt
+				store
+			}
+			friends
+			owner
+			createdAt
+			updatedAt
+		}
+		nextToken
+	}
+}
+
+query GetUser12345 {
+	getUser(id: "12345") {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+query GetUser123451 {
+	getUser(id: "123451") {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+mutation DeleteUser12345 {
+	deleteUser(input: { id: "12345" }) {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+mutation DeleteUser123451 {
+	deleteUser(input: { id: "123451" }) {
+		id
+		sub
+		name
+		surname
+		email
+		mobileNumber
+		birthdate
+		cup_balance
+		credits
+		loyaltyBalance
+		noOfCupsUsed
+		noOfCupsLost
+		pointsUsed
+		noOfRewards
+		cupsPerWeek
+		hoursPerCup
+		address {
+			country
+			city
+			municipality
+			latitude
+			longitude
+			street
+			number
+			postalCode
+		}
+		profilePicture {
+			level
+			filePath
+			filename
+			contentType
+		}
+		preferences
+		stores
+		deposits {
+			amount
+			payedAt
+			store
+		}
+		friends
+		owner
+		createdAt
+		updatedAt
+	}
+}
+
+mutation UpdateUser12345 {
+	updateUser(input: { id: "12345", name: "TzanisChanged", noOfCupsLost: 110 }) {
+		id
+		name
+	}
+}
+
+mutation UpdateUser12345True {
+	updateUser(input: { id: "12345", noOfCupsLost: 110 }) {
+		id
+		name
+	}
+}
