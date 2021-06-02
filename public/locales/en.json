@@ -158,7 +158,8 @@
     "receive": "Receive",
     "confirmNewCustomer": "Confirm new customer",
     "cupLost": "Cup lost",
-    "qrScan": "QR Scan"
+    "qrScan": "QR Scan",
+    "qrScanAgain": "QR Scan again"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",
