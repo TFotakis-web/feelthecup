@@ -1,80 +1,69 @@
 <template>
 	<ion-page>
-		<ion-content>
-			<ion-grid fixed>
+		<ion-content :fullscreen="true" color="gradient">
+			<ion-grid fixed class="ion-centered-container ion-margin-top">
 				<ion-row class="ion-justify-content-center">
 					<ion-col size-sm="10" size-md="8" size-lg="6" size-xl="6">
-						<ion-card>
-							<ion-card-header>
-								<ion-card-title>{{ $t('views.auth.createANewFeelTheCupAccount') }}</ion-card-title>
-							</ion-card-header>
-							<ion-card-content>
-								<form @submit.prevent="signUp">
-									<ion-item>
-										<ion-icon :icon="$ionicons.personOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.name') }}</ion-label>
-										<ion-input v-model="form.attributes.name" type="text" name="name" autocomplete="given-name" required/>
-									</ion-item>
-									<ion-item>
-										<ion-icon slot="start"/>
-										<ion-label position="floating">{{ $t('fields.family_name') }}</ion-label>
-										<ion-input v-model="form.attributes.family_name" type="text" name="fname" autocomplete="family-name" required/>
-									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.transgenderOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.gender') }}</ion-label>
-										<ion-select v-model="form.attributes.gender" :ok-text="$t('actions.ok')" :cancel-text="$t('actions.cancel')" required>
-											<ion-select-option v-for="o in genderOptions" :key="o.text" :value="o.value">{{ o.text }}</ion-select-option>
+						<ion-icon icon="/assets/logo.svg" color="light" class="ion-margin-bottom" style="font-size: 200px"/>
+						<h1 class="ion-margin-bottom" style="font-size: xxx-large">{{ $t('views.auth.signUp') }}</h1>
+						<form @submit.prevent="signUp">
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.personOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.name') }}</ion-label>
+								<ion-input v-model="form.attributes.name" type="text" name="name" autocomplete="given-name" required/>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon slot="start"/>
+								<ion-label position="floating">{{ $t('fields.family_name') }}</ion-label>
+								<ion-input v-model="form.attributes.family_name" type="text" name="fname" autocomplete="family-name" required/>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.transgenderOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.gender') }}</ion-label>
+								<ion-select v-model="form.attributes.gender" :ok-text="$t('actions.ok')" :cancel-text="$t('actions.cancel')" interface="popover" required>
+									<ion-select-option v-for="o in genderOptions" :key="o.text" :value="o.value">{{ o.text }}</ion-select-option>
+								</ion-select>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.calendarOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.birthdate') }}</ion-label>
+								<ion-datetime v-model="birthdate" display-format="DD MMM YYYY" :max="new Date().toISOString()" name="birthdate" required/>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.mailOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.email') }}</ion-label>
+								<ion-input v-model="form.attributes.email" type="email" name="email" autocomplete="email" required/>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
+								<ion-input v-model="form.password" :type="passwordVisible ? 'text' : 'password'" name="password" autocomplete="current-password" required/>
+								<ion-button @click="passwordVisible = !passwordVisible" slot="end" fill="clear" color="dark" shape="round" class="ion-align-self-center">
+									<ion-icon slot="icon-only" :icon="passwordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
+								</ion-button>
+							</ion-item>
+							<ion-row class="ion-align-items-end ion-margin-bottom">
+								<ion-col>
+									<ion-item class="ion-item-round">
+										<ion-icon :icon="$ionicons.callOutline" slot="start" class="ion-align-self-center"/>
+										<ion-label position="floating">{{ $t('fields.countryCode') }}</ion-label>
+										<ion-select v-model="selectedTelephoneCode" :ok-text="$t('actions.ok')" :cancel-text="$t('actions.cancel')" required>
+											<ion-select-option v-for="o in telephoneCodeOptions" :key="o.text" :value="o.value">{{ o.text }}</ion-select-option>
 										</ion-select>
 									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.calendarOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.birthdate') }}</ion-label>
-										<ion-datetime v-model="birthdate" display-format="DD MMM YYYY" :max="new Date().toISOString()" name="birthdate" required/>
+								</ion-col>
+								<ion-col>
+									<ion-item class="ion-item-round">
+										<ion-label position="floating">{{ $t('fields.phoneNumber') }}</ion-label>
+										<ion-input v-model="phone_number" type="number" name="phone" autocomplete="tel" required class="no-arrows"/>
 									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.mailOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.email') }}</ion-label>
-										<ion-input v-model="form.attributes.email" type="email" name="email" autocomplete="email" required/>
-									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
-										<ion-input v-model="form.password" :type="passwordVisible ? 'text' : 'password'" name="password" autocomplete="current-password" required/>
-										<ion-button @click="passwordVisible = !passwordVisible" slot="end" fill="clear" class="ion-align-self-center">
-											<ion-icon slot="icon-only" :icon="passwordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
-										</ion-button>
-									</ion-item>
-									<ion-row class="ion-align-items-end">
-										<ion-col>
-											<ion-item>
-												<ion-icon :icon="$ionicons.callOutline" slot="start" class="ion-align-self-center"/>
-												<ion-label position="floating">{{ $t('fields.countryCode') }}</ion-label>
-												<ion-select v-model="selectedTelephoneCode" :ok-text="$t('actions.ok')" :cancel-text="$t('actions.cancel')" required>
-													<ion-select-option v-for="o in telephoneCodeOptions" :key="o.text" :value="o.value">{{ o.text }}</ion-select-option>
-												</ion-select>
-											</ion-item>
-										</ion-col>
-										<ion-col>
-											<ion-item>
-												<ion-label position="floating">{{ $t('fields.phoneNumber') }}</ion-label>
-												<ion-input v-model="phone_number" type="number" name="phone" autocomplete="tel" required class="no-arrows"/>
-											</ion-item>
-										</ion-col>
-									</ion-row>
-									<div class="ion-margin-top">
-										<loadingBtn color="accent" expand="block" type="submit" :loading="loading" :text="$t('views.auth.signUp')" :loadingText="$t('views.auth.signingUp')" class="ion-margin-bottom"/>
-										<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
-										<hr class="ion-margin-vertical"/>
-										<p>
-											<span>{{ $t('views.auth.haveAnAccount') + ' ' }}</span>
-											<router-link :to="{ name: 'SignIn' }">{{ $t('views.auth.signIn') }}</router-link>
-										</p>
-										<localeDropdown/>
-									</div>
-								</form>
-							</ion-card-content>
-						</ion-card>
+								</ion-col>
+							</ion-row>
+							<loadingBtn color="dark" expand="block" type="submit" shape="round" :loading="loading" :text="$t('views.auth.signUp')" :loadingText="$t('views.auth.signingUp')" class="ion-margin-bottom"/>
+							<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
+							<ion-button :router-link="{ name: 'SignIn' }" fill="clear" color="dark" expand="block" shape="round">{{ $t('views.auth.signIn') }}</ion-button>
+							<localeDropdown :use-button="true" fill="clear" color="dark" expand="block" shape="round"/>
+						</form>
 					</ion-col>
 				</ion-row>
 			</ion-grid>
