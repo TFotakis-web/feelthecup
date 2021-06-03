@@ -26,7 +26,8 @@
       "resetYourPassword": "Επαναφορά κωδικού",
       "forgotYourPassword": "Ξεχάσατε τον κωδικό σας;",
       "changeYourPassword": "Παρακαλούμε αλλάξτε τον κωδικό σας.",
-      "confirmSignUp": "Επιβεβαίωση"
+      "confirmSignUp": "Επιβεβαίωση",
+      "enter": "Είσοδος"
     },
     "homePage": {
       "pageTitle": "Αρχική"
@@ -159,7 +160,8 @@
     "confirmNewCustomer": "Επιβεβαίωση νέου πελάτη",
     "cupLost": "Απώλεια ποτηριού",
     "qrScan": "QR Scan",
-    "qrScanAgain": "QR Scan again"
+    "qrScanAgain": "QR Scan again",
+	"signOut": "Αποσύνδεση"
   },
   "defaultNotification": {
     "somethingWentWrong": "Κάτι πήγε στραβά...",

@@ -26,7 +26,8 @@
       "resetYourPassword": "Reset your password",
       "forgotYourPassword": "Forgot your password?",
       "changeYourPassword": "Please change your password.",
-      "confirmSignUp": "Confirmation"
+      "confirmSignUp": "Confirmation",
+      "enter": "Sign In"
     },
     "homePage": {
       "pageTitle": "Home"
@@ -159,7 +160,8 @@
     "confirmNewCustomer": "Confirm new customer",
     "cupLost": "Cup lost",
     "qrScan": "QR Scan",
-    "qrScanAgain": "QR Scan again"
+    "qrScanAgain": "QR Scan again",
+	"signOut": "Sign Out"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",
