@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@capacitor/camera": "^1.0.0",
 		"@capacitor/core": "^3.0.0",
+		"@googlemaps/js-api-loader": "^1.11.4",
 		"@ionic/vue": "^5.6.7",
 		"@ionic/vue-router": "^5.6.7",
 		"aws-amplify": "^4.0.3",
@@ -26,6 +27,7 @@
 		"vue-i18n": "^9.0.0",
 		"vue-i18n-extract": "^1.2.3",
 		"vue-router": "^4.0.0-0",
+		"vue3-google-map": "^0.7.10",
 		"vue3-qrcode-reader": "0.0.1",
 		"vuex": "^4.0.1"
 	},
