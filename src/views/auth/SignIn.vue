@@ -8,9 +8,9 @@
 						<h1 class="ion-margin-bottom" style="font-size: xxx-large">{{ $t('views.auth.enter') }}</h1>
 						<form @submit.prevent="signIn">
 							<ion-item class="ion-item-round ion-margin-bottom">
-								<ion-icon :icon="$ionicons.personOutline" slot="start" class="ion-align-self-center"/>
-								<ion-label position="floating">{{ $t('fields.username') }}</ion-label>
-								<ion-input v-model="credentials.username" type="text" name="username" autocomplete="username" required/>
+								<ion-icon :icon="$ionicons.mailOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.email') }}</ion-label>
+								<ion-input v-model="credentials.username" type="email" name="email" autocomplete="email" required/>
 							</ion-item>
 							<ion-item class="ion-item-round ion-margin-bottom">
 								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
