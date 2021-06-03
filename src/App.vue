@@ -86,4 +86,17 @@
 	.list-md-lines-none {
 		--border-width: 0;
 	}
+
+	.ion-centered-container {
+		text-align: center;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.ion-item-round {
+		border-radius: 1000px;
+	}
 </style>
