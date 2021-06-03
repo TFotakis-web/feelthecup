@@ -67,7 +67,7 @@
 	// import { Camera, CameraResultType } from '@capacitor/camera';
 	// import QrCode from 'qrcode-reader';
 
-	import { getUser } from '@/graphql/queries';
+	// import { getUser } from '@/graphql/queries';
 	import { API, graphqlOperation } from 'aws-amplify';
 	import { QrcodeStream } from 'vue3-qrcode-reader';
 
@@ -131,9 +131,25 @@
 				this.userId = result;
 				console.log(result);
 
+				const getUserCustom = /* GraphQL */ `
+				  query GetUser($id: ID!) {
+				    getUser(id: $id) {
+				      id
+				      sub
+				      name
+				      surname
+				      profilePicture {
+				        level
+				        filePath
+				        filename
+				        contentType
+				      }
+				    }
+				  }
+				`;
 				let userProfile;
 				try {
-					userProfile = await API.graphql(graphqlOperation(getUser, { id: result }));
+					userProfile = await API.graphql(graphqlOperation(getUserCustom, { id: result }));
 				} catch (e) {
 					console.log(e);
 				} finally {
