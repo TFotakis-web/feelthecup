@@ -85,7 +85,25 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-accent-contrast-rgb: 0, 0, 0;
 	--ion-color-accent-shade: #d6b42c;
 	--ion-color-accent-tint: #f4d247;
+
+	--ion-color-gradient: linear-gradient(45deg, rgba(220, 106, 53, 1) 0%, rgba(244, 206, 16, 1) 50%, rgba(97, 191, 166, 1) 100%);
+	--ion-color-gradient-rgb: 220, 106, 53;
+	--ion-color-gradient-contrast: #000000;
+	--ion-color-gradient-contrast-rgb: 0, 0, 0;
+	--ion-color-gradient-shade: linear-gradient(45deg, rgba(220, 106, 53, 1) 0%, rgba(244, 206, 16, 1) 50%, rgba(97, 191, 166, 1) 100%);
+	--ion-color-gradient-tint: linear-gradient(45deg, rgba(220, 106, 53, 1) 0%, rgba(244, 206, 16, 1) 50%, rgba(97, 191, 166, 1) 100%);
+
+	--ion-font-family: "Century Gothic", sans-serif !important;
+	font-family: "Century Gothic", sans-serif !important;
 }
+
+
+/*@font-face {*/
+/*	font-family: 'Century Gothic';*/
+/*	font-style: normal;*/
+/*	font-weight: normal;*/
+/*	src: url('/assets/fonts/century-gothic.ttf');*/
+/*}*/
 
 .ion-color-accent {
 	--ion-color-base: var(--ion-color-accent);
@@ -94,6 +112,15 @@ http://ionicframework.com/docs/theming/ */
 	--ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
 	--ion-color-shade: var(--ion-color-accent-shade);
 	--ion-color-tint: var(--ion-color-accent-tint);
+}
+
+.ion-color-gradient {
+	--ion-color-base: var(--ion-color-gradient);
+	--ion-color-base-rgb: var(--ion-color-gradient-rgb);
+	--ion-color-contrast: var(--ion-color-gradient-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-gradient-contrast-rgb);
+	--ion-color-shade: var(--ion-color-gradient-shade);
+	--ion-color-tint: var(--ion-color-gradient-tint);
 }
 
 /*
