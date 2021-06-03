@@ -30,7 +30,7 @@
 								<ion-card class="ion-margin-vertical" style="border-radius: 20px">
 									<ion-img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
 									<ion-card-header color="dark">
-										<ion-card-title><strong>Starbucks</strong></ion-card-title>
+										<ion-card-title><strong>Starducks</strong></ion-card-title>
 										<ion-card-subtitle>Patision 115, Athens</ion-card-subtitle>
 									</ion-card-header>
 								</ion-card>
