@@ -44,9 +44,9 @@ export const getUser = /* GraphQL */ `
         store
       }
       friends
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -98,9 +98,9 @@ export const listUsers = /* GraphQL */ `
           store
         }
         friends
+        owner
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -152,9 +152,9 @@ export const getStore = /* GraphQL */ `
         contentType
       }
       preferences
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -198,9 +198,9 @@ export const listStores = /* GraphQL */ `
           contentType
         }
         preferences
+        owner
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -220,9 +220,9 @@ export const getTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -245,9 +245,9 @@ export const listTransactions = /* GraphQL */ `
         receivedAt
         returnedTo
         returnedAt
+        owner
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }

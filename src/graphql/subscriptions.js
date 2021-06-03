@@ -44,9 +44,9 @@ export const onCreateUser = /* GraphQL */ `
         store
       }
       friends
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -93,64 +93,15 @@ export const onUpdateUser = /* GraphQL */ `
         store
       }
       friends
+      owner
       createdAt
       updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser($owner: String!) {
-    onDeleteUser(owner: $owner) {
-      id
-      sub
-      name
-      surname
-      email
-      mobileNumber
-      birthdate
-      cup_balance
-      credits
-      loyaltyBalance
-      noOfCupsUsed
-      noOfCupsLost
-      pointsUsed
-      noOfRewards
-      cupsPerWeek
-      hoursPerCup
-      address {
-        country
-        city
-        municipality
-        latitude
-        longitude
-        street
-        number
-        postalCode
-      }
-      profilePicture {
-        level
-        filePath
-        filename
-        contentType
-      }
-      preferences
-      stores
-      deposits {
-        amount
-        payedAt
-        store
-      }
-      friends
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
 export const onCreateStore = /* GraphQL */ `
-  subscription OnCreateStore($owner: String!) {
-    onCreateStore(owner: $owner) {
+  subscription OnCreateStore {
+    onCreateStore {
       id
       uid
       phone
@@ -194,15 +145,15 @@ export const onCreateStore = /* GraphQL */ `
         contentType
       }
       preferences
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateStore = /* GraphQL */ `
-  subscription OnUpdateStore($owner: String!) {
-    onUpdateStore(owner: $owner) {
+  subscription OnUpdateStore {
+    onUpdateStore {
       id
       uid
       phone
@@ -246,67 +197,15 @@ export const onUpdateStore = /* GraphQL */ `
         contentType
       }
       preferences
+      owner
       createdAt
       updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteStore = /* GraphQL */ `
-  subscription OnDeleteStore($owner: String!) {
-    onDeleteStore(owner: $owner) {
-      id
-      uid
-      phone
-      email
-      cupsDefault
-      cupsRemaining
-      address {
-        country
-        city
-        municipality
-        latitude
-        longitude
-        street
-        number
-        postalCode
-      }
-      tin
-      active
-      contracts {
-        id
-        store
-        plan {
-          rewards
-          noOfCups
-          charge
-        }
-        invoice {
-          amount
-          generatedAt
-          payedAt
-          cancelled
-        }
-        signedAt
-        startingAt
-        expiringAt
-      }
-      logo {
-        level
-        filePath
-        filename
-        contentType
-      }
-      preferences
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
 export const onCreateTransaction = /* GraphQL */ `
-  subscription OnCreateTransaction($owner: String!) {
-    onCreateTransaction(owner: $owner) {
+  subscription OnCreateTransaction($owner: String!, $user: String!) {
+    onCreateTransaction(owner: $owner, user: $user) {
       id
       user
       status
@@ -318,15 +217,15 @@ export const onCreateTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateTransaction = /* GraphQL */ `
-  subscription OnUpdateTransaction($owner: String!) {
-    onUpdateTransaction(owner: $owner) {
+  subscription OnUpdateTransaction($owner: String!, $user: String!) {
+    onUpdateTransaction(owner: $owner, user: $user) {
       id
       user
       status
@@ -338,29 +237,9 @@ export const onUpdateTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
+      owner
       createdAt
       updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteTransaction = /* GraphQL */ `
-  subscription OnDeleteTransaction($owner: String!) {
-    onDeleteTransaction(owner: $owner) {
-      id
-      user
-      status
-      rewards {
-        points
-        type
-      }
-      receivedFrom
-      receivedAt
-      returnedTo
-      returnedAt
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
