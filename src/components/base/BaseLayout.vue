@@ -12,6 +12,10 @@
 		</ion-toolbar>
 		<!--		</ion-header>-->
 		<ion-content :fullscreen="true" :color="contentColor">
+			<ion-refresher slot="fixed" @ionRefresh="$router.go(0)">
+				<ion-refresher-content>
+				</ion-refresher-content>
+			</ion-refresher>
 			<ion-header collapse="condense">
 				<ion-toolbar>
 					<ion-title size="large">{{ pageTitle }}</ion-title>
