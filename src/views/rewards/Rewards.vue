@@ -2,7 +2,7 @@
 	<base-layout :page-title="$t('views.rewards.pageTitle')">
 		<ion-row>
 			<ion-col size="12">
-				<div class="ion-text-center" style="background-color: var(--ion-color-accent); border-radius: 20px; padding-top: 30px; padding-bottom: 30px">
+				<div class="ion-text-center" style="background: var(--ion-color-gradient); border-radius: 20px; padding-top: 30px; padding-bottom: 30px">
 					<div class="vertical-align-content">
 						<ion-icon :icon="$ionicons.starOutline" class="ion-align-self-center" style="font-size: x-large; margin-left: auto"/>
 						<span style="font-size: xxx-large; font-weight: bold; margin-right: auto">{{ points }}</span>
