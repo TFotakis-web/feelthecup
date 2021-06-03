@@ -20,7 +20,7 @@
 									<ion-icon slot="icon-only" :icon="oldPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
 								</ion-button>
 							</ion-item>
-							<ion-item class="ion-item-round ion-margin-bottom">
+							<ion-item class="ion-item-round">
 								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
 								<ion-label position="floating">{{ $t('fields.newPassword') }}</ion-label>
 								<ion-input v-model="new_password" :type="newPasswordVisible ? 'text' : 'password'" name="password" autocomplete="new-password" required/>
@@ -28,6 +28,7 @@
 									<ion-icon slot="icon-only" :icon="newPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
 								</ion-button>
 							</ion-item>
+							<p class="ion-text-justify ion-no-margin ion-margin-bottom"><small>*{{ $t('views.auth.passwordComplexity') }}</small></p>
 							<loadingBtn color="dark" expand="block" type="submit" shape="round" :loading="loading" :text="$t('actions.submit')" :loadingText="$t('actions.submitting')" class="ion-margin-bottom"/>
 							<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
 							<ion-button :router-link="{name: 'SignIn'}" fill="clear" color="dark" expand="block" shape="round">{{ $t('views.auth.backToSignIn') }}</ion-button>
