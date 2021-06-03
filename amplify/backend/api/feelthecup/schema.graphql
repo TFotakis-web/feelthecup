@@ -40,7 +40,7 @@ type User
 	])
 	cup_balance: Int @auth(rules: [
 		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read, update] }
+#		{ allow: groups, groups: ["store"], operations: [read, update] }
 	])
 	credits: Float @auth(rules: [
 		{ allow: owner, operations: [read] }
@@ -50,11 +50,11 @@ type User
 	])
 	noOfCupsUsed: Int @auth(rules: [
 		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read, update] }
+#		{ allow: groups, groups: ["store"], operations: [read, update] }
 	])
 	noOfCupsLost: Int @auth(rules: [
 		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read, update] }
+#		{ allow: groups, groups: ["store"], operations: [read, update] }
 	])
 	pointsUsed: Int @auth(rules: [
 		{ allow: owner, operations: [read] }
@@ -68,13 +68,15 @@ type User
 	hoursPerCup: Float @auth(rules: [
 		{ allow: owner, operations: [read] }
 	])
-	address: Address @auth(rules: [
-		{ allow: owner }
-	])
-	profilePicture: S3Object @auth(rules: [
-		{ allow: owner },
-		{ allow: groups, groups: ["store"], operations: [read] }
-	])
+	address: Address
+#	@auth(rules: [
+#		{ allow: owner }
+#	])
+	profilePicture: S3Object
+#	@auth(rules: [
+#		{ allow: owner },
+#		{ allow: groups, groups: ["store"], operations: [read] }
+#	])
 	preferences: AWSJSON @auth(rules: [
 		{ allow: owner }
 	])

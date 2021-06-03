@@ -6,7 +6,7 @@
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "feelthecup41af5a6141af5a61",
+          "resourceName": "feelthecup092fff8a092fff8a",
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
@@ -16,7 +16,7 @@
         }
       ]
     },
-    "feelthecup41af5a6141af5a61": {
+    "feelthecup092fff8a092fff8a": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -24,7 +24,7 @@
     }
   },
   "storage": {
-    "s356798b98": {
+    "s358566062": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
@@ -45,7 +45,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authfeelthecup41af5a6141af5a61"
+              "userPoolId": "authfeelthecup092fff8a092fff8a"
             }
           },
           "additionalAuthenticationProviders": [

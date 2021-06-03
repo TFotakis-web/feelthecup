@@ -1,23 +1,23 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Parameters": {
-        "authfeelthecup41af5a6141af5a61UserPoolId": {
+        "authfeelthecup092fff8a092fff8aUserPoolId": {
             "Type": "String",
-            "Default": "authfeelthecup41af5a6141af5a61UserPoolId"
+            "Default": "authfeelthecup092fff8a092fff8aUserPoolId"
         },
         
-        "authfeelthecup41af5a6141af5a61IdentityPoolId": {
+        "authfeelthecup092fff8a092fff8aIdentityPoolId": {
             "Type": "String",
-            "Default": "authfeelthecup41af5a6141af5a61IdentityPoolId"
+            "Default": "authfeelthecup092fff8a092fff8aIdentityPoolId"
         },
         
-        "authfeelthecup41af5a6141af5a61AppClientID": {
+        "authfeelthecup092fff8a092fff8aAppClientID": {
             "Type": "String",
-            "Default": "authfeelthecup41af5a6141af5a61AppClientID"
+            "Default": "authfeelthecup092fff8a092fff8aAppClientID"
         },
-        "authfeelthecup41af5a6141af5a61AppClientIDWeb": {
+        "authfeelthecup092fff8a092fff8aAppClientIDWeb": {
             "Type": "String",
-            "Default": "authfeelthecup41af5a6141af5a61AppClientIDWeb"
+            "Default": "authfeelthecup092fff8a092fff8aAppClientIDWeb"
         },
         "AuthRoleArn": {
             "Type": "String"
@@ -55,7 +55,7 @@
               },
               
               "UserPoolId" : {
-                "Ref": "authfeelthecup41af5a6141af5a61UserPoolId"
+                "Ref": "authfeelthecup092fff8a092fff8aUserPoolId"
               }
             }
         },
@@ -68,7 +68,7 @@
                         "",
                         [
                           {
-                            "Ref": "authfeelthecup41af5a6141af5a61UserPoolId"
+                            "Ref": "authfeelthecup092fff8a092fff8aUserPoolId"
                           },
                           "-storeGroupRole"
                         ]
@@ -85,7 +85,7 @@
                             },
                             "Action": "sts:AssumeRoleWithWebIdentity",
                             "Condition": {
-                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authfeelthecup41af5a6141af5a61IdentityPoolId"}},
+                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authfeelthecup092fff8a092fff8aIdentityPoolId"}},
                               "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated"}
                             }
                         }
@@ -111,7 +111,7 @@
                                 "",
                                 [
 
-                                  "feelthecup41af5a6141af5a61",
+                                  "feelthecup092fff8a092fff8a",
                                   "-ExecutionRole-",
                                   {
                                     "Ref": "env"
@@ -272,16 +272,16 @@
                     "Ref": "UnauthRoleArn"
                 },
                 "identityPoolId": {
-                    "Ref": "authfeelthecup41af5a6141af5a61IdentityPoolId"
+                    "Ref": "authfeelthecup092fff8a092fff8aIdentityPoolId"
                 },
                 "userPoolId": {
-                    "Ref": "authfeelthecup41af5a6141af5a61UserPoolId"
+                    "Ref": "authfeelthecup092fff8a092fff8aUserPoolId"
                 },
                 "appClientIDWeb": {
-                    "Ref": "authfeelthecup41af5a6141af5a61AppClientIDWeb"
+                    "Ref": "authfeelthecup092fff8a092fff8aAppClientIDWeb"
                 },
                 "appClientID": {
-                    "Ref": "authfeelthecup41af5a6141af5a61AppClientID"
+                    "Ref": "authfeelthecup092fff8a092fff8aAppClientID"
                 },
                 "region": {
                     "Ref": "AWS::Region"
