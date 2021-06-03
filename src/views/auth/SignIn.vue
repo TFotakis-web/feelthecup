@@ -16,15 +16,15 @@
 								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
 								<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
 								<ion-input v-model="credentials.password" :type="passwordVisible ? 'text' : 'password'" name="password" autocomplete="current-password" required/>
-								<ion-button @click="passwordVisible = !passwordVisible" slot="end" fill="clear" color="dark" class="ion-align-self-center">
+								<ion-button @click="passwordVisible = !passwordVisible" slot="end" fill="clear" color="dark" shape="round" class="ion-align-self-center">
 									<ion-icon slot="icon-only" :icon="passwordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
 								</ion-button>
 							</ion-item>
 							<loadingBtn color="dark" expand="block" type="submit" shape="round" :loading="loading" :text="$t('views.auth.signIn')" :loadingText="$t('views.auth.signingIn')" class="ion-margin-bottom"/>
 							<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
-							<ion-button :router-link="{ name: 'ForgotPassword' }" fill="clear" color="dark" expand="block">{{ $t('views.auth.forgotYourPassword') }}</ion-button>
-							<ion-button :router-link="{ name: 'SignUp' }" fill="clear" color="dark" expand="block">{{ $t('views.auth.createAccount') }}</ion-button>
-							<localeDropdown :use-button="true" fill="clear" color="dark" expand="block"/>
+							<ion-button :router-link="{ name: 'ForgotPassword' }" fill="clear" color="dark" expand="block" shape="round">{{ $t('views.auth.forgotYourPassword') }}</ion-button>
+							<ion-button :router-link="{ name: 'SignUp' }" fill="clear" color="dark" expand="block" shape="round">{{ $t('views.auth.createAccount') }}</ion-button>
+							<localeDropdown :use-button="true" fill="clear" color="dark" expand="block" shape="round"/>
 						</form>
 					</ion-col>
 				</ion-row>
