@@ -34,7 +34,7 @@
 								<ion-label position="floating">{{ $t('fields.email') }}</ion-label>
 								<ion-input v-model="form.attributes.email" type="email" name="email" autocomplete="email" required/>
 							</ion-item>
-							<ion-item class="ion-item-round ion-margin-bottom">
+							<ion-item class="ion-item-round">
 								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
 								<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
 								<ion-input v-model="form.password" :type="passwordVisible ? 'text' : 'password'" name="password" autocomplete="current-password" required/>
@@ -42,6 +42,7 @@
 									<ion-icon slot="icon-only" :icon="passwordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
 								</ion-button>
 							</ion-item>
+							<p class="ion-text-justify ion-no-margin ion-margin-bottom"><small>*{{ $t('views.auth.passwordComplexity') }}</small></p>
 							<ion-row class="ion-align-items-end ion-margin-bottom">
 								<ion-col>
 									<ion-item class="ion-item-round">
