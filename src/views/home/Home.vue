@@ -9,12 +9,12 @@
 			</ion-button>
 		</template>
 		<h1><strong>{{ $t('views.home.itsCoffeeTime') }}</strong></h1>
-		<ion-row class="ion-row-full-width" style="background-color: var(--ion-color-accent)">
+		<ion-row class="ion-row-full-width" style="background: var(--ion-color-gradient);">
 			<ion-col class="ion-text-center ion-align-self-center">
-				<h5>{{ userProfile.noOfCupsUsed }}</h5>
+				<h5 style="font-weight: bold">{{ userProfile.noOfCupsUsed }}</h5>
 			</ion-col>
 			<ion-col>
-				<h5>{{ $t('views.home.FeelTheCupUses') }}</h5>
+				<h5 style="font-weight: bold">{{ $t('views.home.FeelTheCupUses') }}</h5>
 			</ion-col>
 		</ion-row>
 		<h1><strong>{{ $t('views.home.saved') }}</strong></h1>
@@ -30,9 +30,9 @@
 				<h5><strong>{{ kgSUP }}</strong></h5>
 			</ion-col>
 		</ion-row>
-		<ion-row class="ion-text-center ion-row-full-width" style="background-color: var(--ion-color-accent)">
+		<ion-row class="ion-text-center ion-row-full-width" style="background: var(--ion-color-accent)">
 			<ion-col>
-				<h5>{{ $t('views.home.timeTillCupReturning') }}</h5>
+				<h5 style="font-weight: bold">{{ $t('views.home.timeTillCupReturning') }}</h5>
 			</ion-col>
 		</ion-row>
 		<ion-row class="ion-text-center">
