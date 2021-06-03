@@ -94,6 +94,7 @@
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
+		max-height: 100vh;
 	}
 
 	.ion-item-round {
