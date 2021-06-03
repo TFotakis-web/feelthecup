@@ -27,7 +27,8 @@
       "forgotYourPassword": "Forgot your password?",
       "changeYourPassword": "Please change your password.",
       "confirmSignUp": "Confirmation",
-      "enter": "Sign In"
+      "enter": "Sign In",
+      "passwordComplexity": "The password should be at least 8 characters long and it should contain at least one upper case and one lower case letter, at least one number and one symbol."
     },
     "homePage": {
       "pageTitle": "Home"
@@ -161,7 +162,7 @@
     "cupLost": "Cup lost",
     "qrScan": "QR Scan",
     "qrScanAgain": "QR Scan again",
-	"signOut": "Sign Out"
+    "signOut": "Sign Out"
   },
   "defaultNotification": {
     "somethingWentWrong": "Something went wrong...",

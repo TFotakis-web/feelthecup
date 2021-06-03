@@ -27,7 +27,8 @@
       "forgotYourPassword": "Ξεχάσατε τον κωδικό σας;",
       "changeYourPassword": "Παρακαλούμε αλλάξτε τον κωδικό σας.",
       "confirmSignUp": "Επιβεβαίωση",
-      "enter": "Είσοδος"
+      "enter": "Είσοδος",
+      "passwordComplexity": "Ο κωδικός πρέπει να αποτελείται από τουλάχιστον 8 χαρακτήρες και να περιλαμβάνει τουλάχιστον ένα κεφαλαίο και ένα μικρό γράμμα, έναν αριθμό και ένα σύμβολο."
     },
     "homePage": {
       "pageTitle": "Αρχική"
@@ -161,7 +162,7 @@
     "cupLost": "Απώλεια ποτηριού",
     "qrScan": "QR Scan",
     "qrScanAgain": "QR Scan again",
-	"signOut": "Αποσύνδεση"
+    "signOut": "Αποσύνδεση"
   },
   "defaultNotification": {
     "somethingWentWrong": "Κάτι πήγε στραβά...",
