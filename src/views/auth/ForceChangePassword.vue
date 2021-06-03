@@ -1,48 +1,38 @@
 <template>
 	<ion-page>
-		<ion-content>
-			<ion-grid fixed>
+		<ion-content :fullscreen="true" color="gradient">
+			<ion-grid fixed class="ion-centered-container ion-margin-top">
 				<ion-row class="ion-justify-content-center">
 					<ion-col size-sm="10" size-md="8" size-lg="6" size-xl="6">
-						<ion-card>
-							<ion-card-header>
-								<ion-card-title>{{ $t('views.auth.changeYourPassword') }}</ion-card-title>
-							</ion-card-header>
-							<ion-card-content>
-								<form @submit.prevent="completeNewPassword">
-									<ion-item>
-										<ion-icon :icon="$ionicons.personOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.username') }}</ion-label>
-										<ion-input v-model="username" type="text" name="username" autocomplete="username" required/>
-									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
-										<ion-input v-model="old_password" :type="oldPasswordVisible ? 'text' : 'password'" name="password" autocomplete="new-password" required/>
-										<ion-button @click="oldPasswordVisible = !oldPasswordVisible" slot="end" fill="clear" class="ion-align-self-center">
-											<ion-icon slot="icon-only" :icon="oldPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
-										</ion-button>
-									</ion-item>
-									<ion-item>
-										<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
-										<ion-label position="floating">{{ $t('fields.newPassword') }}</ion-label>
-										<ion-input v-model="new_password" :type="newPasswordVisible ? 'text' : 'password'" name="password" autocomplete="new-password" required/>
-										<ion-button @click="newPasswordVisible = !newPasswordVisible" slot="end" fill="clear" class="ion-align-self-center">
-											<ion-icon slot="icon-only" :icon="newPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
-										</ion-button>
-									</ion-item>
-									<div class="ion-margin-top">
-										<loadingBtn color="accent" expand="block" type="submit" :loading="loading" :text="$t('actions.submit')" :loadingText="$t('actions.submitting')" class="ion-margin-bottom"/>
-										<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
-										<hr class="ion-margin-vertical"/>
-										<p>
-											<router-link :to="{name: 'SignIn'}">{{ $t('views.auth.backToSignIn') }}</router-link>
-										</p>
-										<localeDropdown/>
-									</div>
-								</form>
-							</ion-card-content>
-						</ion-card>
+						<ion-icon icon="/assets/logo.svg" color="light" class="ion-margin-bottom" style="font-size: 200px"/>
+						<h1 class="ion-margin-bottom" style="font-size: xx-large">{{ $t('views.auth.changeYourPassword') }}</h1>
+						<form @submit.prevent="completeNewPassword">
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.mailOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.email') }}</ion-label>
+								<ion-input v-model="username" type="email" name="email" autocomplete="email" required/>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.password') }}</ion-label>
+								<ion-input v-model="old_password" :type="oldPasswordVisible ? 'text' : 'password'" name="password" autocomplete="new-password" required/>
+								<ion-button @click="oldPasswordVisible = !oldPasswordVisible" slot="end" fill="clear" color="dark" shape="round" class="ion-align-self-center">
+									<ion-icon slot="icon-only" :icon="oldPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
+								</ion-button>
+							</ion-item>
+							<ion-item class="ion-item-round ion-margin-bottom">
+								<ion-icon :icon="$ionicons.keyOutline" slot="start" class="ion-align-self-center"/>
+								<ion-label position="floating">{{ $t('fields.newPassword') }}</ion-label>
+								<ion-input v-model="new_password" :type="newPasswordVisible ? 'text' : 'password'" name="password" autocomplete="new-password" required/>
+								<ion-button @click="newPasswordVisible = !newPasswordVisible" slot="end" fill="clear" color="dark" shape="round" class="ion-align-self-center">
+									<ion-icon slot="icon-only" :icon="newPasswordVisible ? $ionicons.eyeOffOutline : $ionicons.eyeOutline"/>
+								</ion-button>
+							</ion-item>
+							<loadingBtn color="dark" expand="block" type="submit" shape="round" :loading="loading" :text="$t('actions.submit')" :loadingText="$t('actions.submitting')" class="ion-margin-bottom"/>
+							<p v-if="error !== {}" class="text-danger">{{ error.message }}</p>
+							<ion-button :router-link="{name: 'SignIn'}" fill="clear" color="dark" expand="block" shape="round">{{ $t('views.auth.backToSignIn') }}</ion-button>
+							<localeDropdown :use-button="true" fill="clear" color="dark" expand="block" shape="round"/>
+						</form>
 					</ion-col>
 				</ion-row>
 			</ion-grid>
