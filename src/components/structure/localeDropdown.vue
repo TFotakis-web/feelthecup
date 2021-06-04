@@ -23,7 +23,7 @@
 	>
 		<ion-icon :icon="$ionicons.languageOutline" slot="icon-only"/>
 	</ion-button>
-	<ion-popover v-if="useButton" :is-open="showPopover" @onDidDismiss="showPopover = false" style="width: fit-content">
+	<ion-popover v-if="useButton" :is-open="showPopover" @didDismiss="showPopover = false" style="width: fit-content">
 		<ion-list>
 			<ion-item v-for="locale in $i18n.availableLocales" :key="locale" :value="locale" @click="() => {$i18n.$loadLanguageAsync(locale); showPopover = false;}" button>{{ locale }}</ion-item>
 		</ion-list>
