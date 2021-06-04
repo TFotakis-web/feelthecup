@@ -69,18 +69,20 @@
 			</ion-col>
 		</ion-row>
 		<ion-row class="ion-row-full-width ion-align-items-center" style="background-color: var(--ion-color-accent); margin-top: 30px; margin-bottom: 15px;">
-			<ion-col class="ion-text-center" height="40px">
-				<div class="ion-padding ion-text-center ion-margin-end" style="border-radius: 100%; background-color: var(--ion-color-dark); color: var(--ion-color-light); width: 60px; height: 60px; margin-top: -30px; margin-bottom: -30px; display: inline-block;">
+			<ion-col size="auto" class="ion-text-center" height="40px">
+				<div class="ion-padding ion-text-center ion-margin-end" style="border-radius: 100%; background-color: var(--ion-color-dark); color: var(--ion-color-light); width: 60px; height: 60px; margin-top: -30px; margin-bottom: -30px; display: inline-block; margin-left: 5px">
 					<ion-icon :icon="$ionicons.peopleOutline" class="ion-align-self-center" style="font-size: x-large; margin-left: auto"/>
 				</div>
+			</ion-col>
+			<ion-col>
 				<span class="ion-align-self-center ion-margin" style="font-weight: bold;">{{ $t('views.userProfile.feelTheCupForFriends') }}</span>
 			</ion-col>
 		</ion-row>
 		<ion-list>
-			<ion-item v-if="userProfile.friends.length === 0">
+			<ion-item v-if="friends.length === 0">
 				<span>{{ $t('views.userProfile.noFriends') }}</span>
 			</ion-item>
-			<ion-item v-else v-for="(friend, i) in userProfile.friends" :key="`friend:${i}`">
+			<ion-item v-else v-for="(friend, i) in friends" :key="`friend:${i}`">
 				<ion-avatar slot="start">
 					<s3-ion-img :s3-object="friend.profilePicture" :default-url="$store.getters['pageStructure/defaultProfilePicture']"/>
 				</ion-avatar>
@@ -119,21 +121,21 @@
 					// },
 				],
 				friends: [
-					// {
-					// 	id: 1,
-					// 	name: 'Aspa',
-					// 	profilePicture: {},
-					// },
-					// {
-					// 	id: 2,
-					// 	name: 'Myriam',
-					// 	profilePicture: {},
-					// },
-					// {
-					// 	id: 3,
-					// 	name: 'Alex',
-					// 	profilePicture: {},
-					// }
+					{
+						id: 1,
+						name: 'Aspa',
+						profilePicture: {},
+					},
+					{
+						id: 2,
+						name: 'Myriam',
+						profilePicture: {},
+					},
+					{
+						id: 3,
+						name: 'Alex',
+						profilePicture: {},
+					}
 				],
 			};
 		},
