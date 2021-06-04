@@ -58,7 +58,6 @@ export const pageStructure = {
 		routerViewPendingPromises: (state) => state.routerViewPendingPromises,
 		localesLoaded: (state) => state.localesLoaded,
 		defaultProfilePicture: () => 'https://www.w3schools.com/howto/img_avatar.png',
-		// googleMapsApiKey: () => 'AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg', //Todo: Change with official key
-		googleMapsApiKey: () => '',
+		googleMapsApiKey: () => 'AIzaSyAxaipjJ-eiFM9Vz0B3Iz-QWDnN-etKc_c',
 	},
 };
