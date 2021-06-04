@@ -87,6 +87,15 @@
     },
     "storeSettings": {
       "pageTitle": "Settings"
+    },
+    "leaderboard": {
+      "pageTitle": "FeelTheCup Leaderboard",
+      "currentPlaceOnLeaderboard": "Current place on leaderboard",
+      "place": "Place",
+      "user": "User",
+      "numberPoints": "#Points",
+      "noUsers": "There are no users",
+      "weekEnding": "Week ending"
     }
   },
   "fields": {

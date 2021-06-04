@@ -87,6 +87,15 @@
     },
     "storeSettings": {
       "pageTitle": "Ρυθμίσεις"
+    },
+    "leaderboard": {
+      "pageTitle": "FeelTheCup Leaderboard",
+      "currentPlaceOnLeaderboard": "Τωρινή θέση στο leaderboard",
+      "place": "Θέση",
+      "user": "Χρήστης",
+      "numberPoints": "#Πόντων",
+      "noUsers": "Δεν υπάρχουν χρήστες",
+      "weekEnding": "Λήξη Εβδομάδας"
     }
   },
   "fields": {
