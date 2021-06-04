@@ -26,7 +26,8 @@ export default [
 	{
 		path: '/rewards',
 		name: 'Rewards',
-		component: () => import('@/views/rewards/Rewards.vue'),
+		component: () => import('@/views/rewards/Leaderboard.vue'),
+		// component: () => import('@/views/rewards/Rewards.vue'),
 		meta: {
 			requiresAuth: true,
 		},
