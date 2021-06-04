@@ -1,5 +1,5 @@
 <template>
-	<ion-item lines="none" v-if="!useButton">
+	<ion-item :lines="lines" v-if="!useButton">
 		<ion-icon :icon="$ionicons.languageOutline" slot="start" class="ion-align-self-center"/>
 		<ion-label v-if="!noLabel">{{ $t('components.localeDropdown.language') }}</ion-label>
 		<ion-select :ok-text="$t('actions.ok')" :cancel-text="$t('actions.cancel')" interface="popover" :ionChange="$i18n.$loadLanguageAsync(selectedLocale)" v-model="selectedLocale">
@@ -33,6 +33,7 @@
 	export default {
 		name: 'LocaleDropdown',
 		props: [
+			'lines',
 			'noLabel',
 			'useButton',
 			'buttonType',
