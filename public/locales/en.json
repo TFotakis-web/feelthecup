@@ -74,7 +74,10 @@
       "pageTitle": "Notifications"
     },
     "settings": {
-      "pageTitle": "Settings"
+      "pageTitle": "Settings",
+      "generalGroup": "General",
+      "accountGroup": "Account",
+      "appGroup": "App"
     },
     "setReminder": {
       "pageTitle": "Set reminder"
@@ -139,7 +142,8 @@
       "male": "Male",
       "female": "Female",
       "other": "Other"
-    }
+    },
+    "user": "User"
   },
   "actions": {
     "submit": "Submit",

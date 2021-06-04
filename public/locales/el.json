@@ -74,7 +74,10 @@
       "pageTitle": "Ειδοποιήσεις"
     },
     "settings": {
-      "pageTitle": "Ρυθμίσεις"
+      "pageTitle": "Ρυθμίσεις",
+      "generalGroup": "Γενικά",
+      "accountGroup": "Λογαριασμός",
+      "appGroup": "Εφαρμογή"
     },
     "setReminder": {
       "pageTitle": "Ορισμός υπενθύμησης"
@@ -139,7 +142,8 @@
       "male": "Άνδρας",
       "female": "Γυναίκα",
       "other": "Άλλο"
-    }
+    },
+    "user": "Χρήστης"
   },
   "actions": {
     "submit": "Υποβολή",
