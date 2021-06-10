@@ -8,13 +8,14 @@
 				<ion-icon :icon="$ionicons.settingsOutline" slot="icon-only"/>
 			</ion-button>
 		</template>
-		<h1><strong>{{ $t('views.home.itsCoffeeTime') }}</strong></h1>
+		<h1 class="ion-margin-bottom"><strong>{{ $t('views.home.itsCoffeeTime') }}</strong></h1>
 		<ion-row class="ion-row-full-width" style="background: var(--ion-color-gradient);">
 			<ion-col class="ion-text-center ion-align-self-center">
-				<h5 style="font-weight: bold">{{ userProfile.noOfCupsUsed }}</h5>
+				<ion-icon icon="/assets/logo.svg" color="dark" style="font-size: 150px; margin-top: -15px; margin-bottom: -15px;"/>
+				<h5 style="font-weight: bold; margin-top: -80px; margin-bottom: 55px; position: relative; z-index: 1;">{{ userProfile.noOfCupsUsed }}</h5>
 			</ion-col>
-			<ion-col>
-				<h5 style="font-weight: bold">{{ $t('views.home.FeelTheCupUses') }}</h5>
+			<ion-col class="ion-text-center ion-align-self-center">
+				<h4 style="font-weight: bold">{{ $t('views.home.FeelTheCupUses') }}</h4>
 			</ion-col>
 		</ion-row>
 		<h1><strong>{{ $t('views.home.saved') }}</strong></h1>
