@@ -21,7 +21,7 @@
 					<ion-title size="large">{{ pageTitle }}</ion-title>
 				</ion-toolbar>
 			</ion-header>
-			<ion-grid fixed>
+			<ion-grid fixed style="padding-top: 0; padding-bottom: 0;">
 				<slot/>
 			</ion-grid>
 		</ion-content>
