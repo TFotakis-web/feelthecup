@@ -131,3 +131,8 @@
 		},
 	};
 </script>
+<style>
+	ion-content {
+		--overflow: overlay;
+	}
+</style>
