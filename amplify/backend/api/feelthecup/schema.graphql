@@ -1,97 +1,26 @@
-type User
-	@model(
-		queries: { get: "getUser", list: "listUsers" },
-		mutations: {create: "createUser", update:"updateUser"}
-	)
-	@auth(
-		rules: [
-			{ allow: owner, ownerField: "owner", operations: [create, read, update] },
-			{ allow: groups, groups: ["store"], queries: [get], mutations: [update] },
-			{ allow: groups, groups: ["FORBIDDEN"], operations: [delete] }
-		]
-	) {
+type User @model {
 	id: ID
-	sub: String @auth(rules: [
-		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	name: String @auth(rules: [
-		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	surname: String @auth(rules: [
-		{ allow: owner, operations: [read] },
-		{ allow: groups, groups: ["store"], operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	email: String @auth(rules: [
-		{ allow: owner, operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	mobileNumber: String @auth(rules: [
-		{ allow: owner, operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	birthdate: AWSDate @auth(rules: [
-		{ allow: owner, operations: [read] }
-		{ allow: groups, groups: ["FORBIDDEN"], operations: [update] }
-	])
-	cup_balance: Int @auth(rules: [
-		{ allow: owner, operations: [read] },
-#		{ allow: groups, groups: ["store"], operations: [read, update] }
-	])
-	credits: Float @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
-	loyaltyBalance: Int @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
-	noOfCupsUsed: Int @auth(rules: [
-		{ allow: owner, operations: [read] },
-#		{ allow: groups, groups: ["store"], operations: [read, update] }
-	])
-	noOfCupsLost: Int @auth(rules: [
-		{ allow: owner, operations: [read] },
-#		{ allow: groups, groups: ["store"], operations: [read, update] }
-	])
-	pointsUsed: Int @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
-	noOfRewards: Int @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
-	cupsPerWeek: Float @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
-	hoursPerCup: Float @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
+	sub: String
+	name: String
+	surname: String
+	email: String
+	mobileNumber: String
+	birthdate: AWSDate
+	cup_balance: Int
+	credits: Float
+	loyaltyBalance: Int
+	noOfCupsUsed: Int
+	noOfCupsLost: Int
+	pointsUsed: Int
+	noOfRewards: Int
+	cupsPerWeek: Float
+	hoursPerCup: Float
 	address: Address
-#	@auth(rules: [
-#		{ allow: owner }
-#	])
 	profilePicture: S3Object
-#	@auth(rules: [
-#		{ allow: owner },
-#		{ allow: groups, groups: ["store"], operations: [read] }
-#	])
-	preferences: AWSJSON @auth(rules: [
-		{ allow: owner }
-	])
-	stores: [ID] @auth(rules: [
-		{ allow: owner }
-	])
-	deposits: [Deposit] @auth(rules: [
-		{ allow: owner }
-	])
-	friends: [ID] @auth(rules: [
-		{ allow: owner }
-	])
-	owner: String @auth(rules: [
-		{ allow: owner, operations: [read] }
-	])
+	preferences: AWSJSON
+	stores: [ID]
+	deposits: [Deposit]
+	friends: [ID]
 }
 
 type S3Object {
@@ -107,18 +36,7 @@ type Deposit {
 	store: ID
 }
 
-type Store
-	@model(
-		queries: { get: "getStore", list: "listStores" },
-		mutations: { create: "createStore", update: "updateStore" }
-	)
-	@auth(
-		rules: [
-			{ allow: owner, ownerField: "owner", operations: [create, read, update] }
-			{ allow: private, operations: [read] }
-			{ allow: groups, groups: ["FORBIDDEN"], operations: [delete] }
-		]
-	) {
+type Store @model {
 	id: ID
 	uid: ID
 	phone: String
@@ -131,7 +49,6 @@ type Store
 	contracts: [Contract]
 	logo: S3Object
 	preferences: AWSJSON
-	owner: String @auth(rules: [{ allow: owner, operations: [read] }])
 }
 
 type Address {
@@ -168,18 +85,7 @@ type Invoice {
 	cancelled: Boolean
 }
 
-type Transaction
-	@model(
-		queries: { get: "getTransaction", list: "listTransactions" }
-		mutations: { create: "createTransaction", update: "updateTransaction" }
-	)
-	@auth(
-		rules: [
-			{ allow: owner, ownerField: "owner", operations: [create, read, update] }
-			{ allow: owner, ownerField: "user", operations: [read] }
-			{ allow: groups, groups: ["FORBIDDEN"], operations: [delete] }
-		]
-	) {
+type Transaction @model {
 	id: ID
 	user: ID
 	status: TransactionStatus
@@ -188,7 +94,6 @@ type Transaction
 	receivedAt: AWSDateTime
 	returnedTo: ID
 	returnedAt: AWSDateTime
-	owner: String
 }
 
 enum TransactionStatus {
