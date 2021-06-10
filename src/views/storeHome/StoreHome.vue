@@ -133,6 +133,9 @@
 				        filename
 				        contentType
 				      }
+				      cup_balance
+				      noOfCupsUsed
+				      noOfCupsLost
 				    }
 				  }
 				`;
@@ -140,6 +143,7 @@
 				try {
 					userProfile = await API.graphql(graphqlOperation(getUserCustom, { id: result }));
 					this.userProfile = userProfile.data.getUser;
+					console.log(this.userProfile);
 				} catch (e) {
 					console.log(e);
 					this.$toast.error();
@@ -166,12 +170,137 @@
 					}
 				}
 			},
-			giveCup() {
+			async giveCup() {
 				console.log('Give cup!');
+				const updateUserCustom = /* GraphQL */ `
+					mutation UpdateUser(
+						$input: UpdateUserInput!
+						$condition: ModelUserConditionInput
+					) {
+						updateUser(input: $input, condition: $condition) {
+							id
+					        sub
+					        name
+					        surname
+					        profilePicture {
+					            level
+					            filePath
+					            filename
+					            contentType
+					        }
+					        cup_balance
+					        noOfCupsUsed
+					        noOfCupsLost
+						}
+					}`;
+				try {
+					let response = await API.graphql(graphqlOperation(updateUserCustom, {
+						input: {
+							id: this.userId,
+							cup_balance: this.userProfile.cup_balance - 1,
+							noOfCupsUsed: this.userProfile.noOfCupsUsed + 1,
+							// noOfCupsLost: this.userProfile.noOfCupsLost,
+						},
+					}));
+					console.log(response);
+				} catch (e) {
+					console.log(e);
+					this.$toast.error();
+				}
+
+				const getUserCustom = /* GraphQL */ `
+				  query GetUser($id: ID!) {
+				    getUser(id: $id) {
+				      id
+				      sub
+				      name
+				      surname
+				      profilePicture {
+				        level
+				        filePath
+				        filename
+				        contentType
+				      }
+				      cup_balance
+				      noOfCupsUsed
+				      noOfCupsLost
+				    }
+				  }
+				`;
+				let userProfile;
+				try {
+					userProfile = await API.graphql(graphqlOperation(getUserCustom, { id: this.userId }));
+					this.userProfile = userProfile.data.getUser;
+				} catch (e) {
+					console.log(e);
+					this.$toast.error();
+				}
 				this.init();
 			},
-			receiveCup() {
+			async receiveCup() {
 				console.log('Receive cup!');
+				const updateUserCustom = /* GraphQL */ `
+					mutation UpdateUser(
+						$input: UpdateUserInput!
+						$condition: ModelUserConditionInput
+					) {
+						updateUser(input: $input, condition: $condition) {
+							id
+					        sub
+					        name
+					        surname
+					        profilePicture {
+					            level
+					            filePath
+					            filename
+					            contentType
+					        }
+					        cup_balance
+					        noOfCupsUsed
+					        noOfCupsLost
+						}
+					}`;
+				try {
+					let response = await API.graphql(graphqlOperation(updateUserCustom, {
+						input: {
+							id: this.userId,
+							cup_balance: this.userProfile.cup_balance + 1,
+							// noOfCupsLost: this.userProfile.noOfCupsLost,
+						},
+					}));
+					console.log(response);
+				} catch (e) {
+					console.log(e);
+					this.$toast.error();
+				}
+
+				const getUserCustom = /* GraphQL */ `
+				  query GetUser($id: ID!) {
+				    getUser(id: $id) {
+				      id
+				      sub
+				      name
+				      surname
+				      profilePicture {
+				        level
+				        filePath
+				        filename
+				        contentType
+				      }
+				      cup_balance
+				      noOfCupsUsed
+				      noOfCupsLost
+				    }
+				  }
+				`;
+				let userProfile;
+				try {
+					userProfile = await API.graphql(graphqlOperation(getUserCustom, { id: this.userId }));
+					this.userProfile = userProfile.data.getUser;
+				} catch (e) {
+					console.log(e);
+					this.$toast.error();
+				}
 				this.init();
 			},
 		},
