@@ -44,7 +44,6 @@ export const getUser = /* GraphQL */ `
         store
       }
       friends
-      owner
       createdAt
       updatedAt
     }
@@ -98,7 +97,6 @@ export const listUsers = /* GraphQL */ `
           store
         }
         friends
-        owner
         createdAt
         updatedAt
       }
@@ -152,7 +150,6 @@ export const getStore = /* GraphQL */ `
         contentType
       }
       preferences
-      owner
       createdAt
       updatedAt
     }
@@ -198,7 +195,6 @@ export const listStores = /* GraphQL */ `
           contentType
         }
         preferences
-        owner
         createdAt
         updatedAt
       }
@@ -220,7 +216,6 @@ export const getTransaction = /* GraphQL */ `
       receivedAt
       returnedTo
       returnedAt
-      owner
       createdAt
       updatedAt
     }
@@ -245,7 +240,6 @@ export const listTransactions = /* GraphQL */ `
         receivedAt
         returnedTo
         returnedAt
-        owner
         createdAt
         updatedAt
       }
