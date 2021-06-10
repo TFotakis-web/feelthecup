@@ -36,14 +36,14 @@
 				<ion-badge slot="end" color="accent">{{ friend.points }}</ion-badge>
 			</ion-item>
 		</ion-list>
-		<ion-row class="ion-row-full-width" style="background: var(--ion-color-accent)">
-			<ion-col class="ion-padding-start ion-align-self-center">
-				<span class="ion-text-left" style="font-size: x-large; font-weight: bold;">{{ $t('views.leaderboard.weekEnding') }}</span>
-			</ion-col>
-			<ion-col size="auto" class="ion-padding-end">
-				<span class="ion-text-right" style="font-size: xx-large; font-weight: bold;">{{ weekEnd }}</span>
-			</ion-col>
-		</ion-row>
+<!--		<ion-row class="ion-row-full-width" style="background: var(&#45;&#45;ion-color-accent)">-->
+<!--			<ion-col class="ion-padding-start ion-align-self-center">-->
+<!--				<span class="ion-text-left" style="font-size: x-large; font-weight: bold;">{{ $t('views.leaderboard.weekEnding') }}</span>-->
+<!--			</ion-col>-->
+<!--			<ion-col size="auto" class="ion-padding-end">-->
+<!--				<span class="ion-text-right" style="font-size: xx-large; font-weight: bold;">{{ weekEnd }}</span>-->
+<!--			</ion-col>-->
+<!--		</ion-row>-->
 	</base-layout>
 </template>
 <script>
